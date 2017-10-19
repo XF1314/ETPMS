@@ -1,0 +1,710 @@
+2017-08-28 08:03:26,369  INFO - ETPMS initialized.
+2017-08-28 08:06:26,538  INFO - ETPMS initialized.
+2017-08-28 08:08:12,921 ERROR - DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。
+2017-08-28 08:12:30,069 ERROR - DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。
+2017-08-28 08:12:30,069 ERROR - DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。
+2017-08-28 08:20:26,439  INFO - ETPMS initialized.
+2017-08-28 08:23:39,801  INFO - ETPMS initialized.
+2017-08-28 08:24:39,146 FATAL - System.ArgumentException: DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。/nDEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。/n
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.<>c__DisplayClass6_0.<Commite>b__1(DbEntityValidationResult k) 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 37
+   在 ETPMS.Infrastructure.Extensions.IEnumerableExtensions.ForEach[T](IEnumerable`1 enumerable, Action`1 action) 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Extensions\IEnumerableExtensions.cs:行号 14
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 34
+2017-08-28 08:24:41,052 ERROR - DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。/nDEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。/n
+System.ArgumentException: DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。/nDEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。/n
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 44
+   在 ETPMS.Infrastructure.Repository.ETPMSBaseRepository`1.Update(TEntity entity, Boolean isSave) 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSBaseRepository.cs:行号 42
+   在 ETPMS.Application.Implementations.DepartmentService.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Application\Implementations\DepartmentService.cs:行号 146
+   在 ETPMS.Web.Controllers.DepartmentController.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Web\Controllers\DepartmentController.cs:行号 121
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-08-28 08:24:41,061 ERROR - 请求异常：DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。/nDEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。/n
+2017-08-28 08:25:59,098  INFO - ETPMS initialized.
+2017-08-28 08:26:39,467 FATAL - System.ArgumentException: DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 38
+2017-08-28 08:26:42,500 ERROR - DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+System.ArgumentException: DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 44
+   在 ETPMS.Infrastructure.Repository.ETPMSBaseRepository`1.Update(TEntity entity, Boolean isSave) 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSBaseRepository.cs:行号 42
+   在 ETPMS.Application.Implementations.DepartmentService.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Application\Implementations\DepartmentService.cs:行号 146
+   在 ETPMS.Web.Controllers.DepartmentController.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Web\Controllers\DepartmentController.cs:行号 121
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-08-28 08:26:42,506 ERROR - 请求异常：DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+2017-08-28 08:26:54,641 FATAL - System.ArgumentException: DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 38
+2017-08-28 08:26:56,210 ERROR - DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+System.ArgumentException: DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 44
+   在 ETPMS.Infrastructure.Repository.ETPMSBaseRepository`1.Update(TEntity entity, Boolean isSave) 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSBaseRepository.cs:行号 42
+   在 ETPMS.Application.Implementations.DepartmentService.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Application\Implementations\DepartmentService.cs:行号 146
+   在 ETPMS.Web.Controllers.DepartmentController.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Web\Controllers\DepartmentController.cs:行号 121
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-08-28 08:26:56,211 ERROR - 请求异常：DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+2017-08-28 08:27:08,873 FATAL - System.ArgumentException: DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 38
+2017-08-28 08:27:10,474 ERROR - DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+System.ArgumentException: DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 44
+   在 ETPMS.Infrastructure.Repository.ETPMSBaseRepository`1.Update(TEntity entity, Boolean isSave) 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSBaseRepository.cs:行号 42
+   在 ETPMS.Application.Implementations.DepartmentService.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Application\Implementations\DepartmentService.cs:行号 146
+   在 ETPMS.Web.Controllers.DepartmentController.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Web\Controllers\DepartmentController.cs:行号 121
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-08-28 08:27:10,475 ERROR - 请求异常：DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+2017-08-28 08:28:23,819 FATAL - System.ArgumentException: DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 38
+2017-08-28 08:28:25,676 ERROR - DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+System.ArgumentException: DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 44
+   在 ETPMS.Infrastructure.Repository.ETPMSBaseRepository`1.Update(TEntity entity, Boolean isSave) 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSBaseRepository.cs:行号 42
+   在 ETPMS.Application.Implementations.DepartmentService.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Application\Implementations\DepartmentService.cs:行号 146
+   在 ETPMS.Web.Controllers.DepartmentController.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Web\Controllers\DepartmentController.cs:行号 121
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-08-28 08:28:25,677 ERROR - 请求异常：DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+2017-08-28 08:28:33,188 FATAL - System.ArgumentException: DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 38
+2017-08-28 08:28:36,608 ERROR - DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+System.ArgumentException: DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 44
+   在 ETPMS.Infrastructure.Repository.ETPMSBaseRepository`1.Update(TEntity entity, Boolean isSave) 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSBaseRepository.cs:行号 42
+   在 ETPMS.Application.Implementations.DepartmentService.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Application\Implementations\DepartmentService.cs:行号 146
+   在 ETPMS.Web.Controllers.DepartmentController.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Web\Controllers\DepartmentController.cs:行号 121
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-08-28 08:28:36,609 ERROR - 请求异常：DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+2017-08-28 08:28:49,853 FATAL - System.ArgumentException: DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 38
+2017-08-28 08:28:51,381 ERROR - DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+System.ArgumentException: DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 44
+   在 ETPMS.Infrastructure.Repository.ETPMSBaseRepository`1.Update(TEntity entity, Boolean isSave) 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSBaseRepository.cs:行号 42
+   在 ETPMS.Application.Implementations.DepartmentService.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Application\Implementations\DepartmentService.cs:行号 146
+   在 ETPMS.Web.Controllers.DepartmentController.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Web\Controllers\DepartmentController.cs:行号 121
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-08-28 08:28:51,381 ERROR - 请求异常：DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+2017-08-28 08:29:38,622 FATAL - System.ArgumentException: DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 38
+2017-08-28 08:29:40,119 ERROR - DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+System.ArgumentException: DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 44
+   在 ETPMS.Infrastructure.Repository.ETPMSBaseRepository`1.Update(TEntity entity, Boolean isSave) 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSBaseRepository.cs:行号 42
+   在 ETPMS.Application.Implementations.DepartmentService.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Application\Implementations\DepartmentService.cs:行号 146
+   在 ETPMS.Web.Controllers.DepartmentController.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Web\Controllers\DepartmentController.cs:行号 121
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-08-28 08:29:40,120 ERROR - 请求异常：DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+2017-08-28 08:29:52,060 FATAL - System.ArgumentException: DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 38
+2017-08-28 08:29:53,350 ERROR - DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+System.ArgumentException: DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 44
+   在 ETPMS.Infrastructure.Repository.ETPMSBaseRepository`1.Update(TEntity entity, Boolean isSave) 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSBaseRepository.cs:行号 42
+   在 ETPMS.Application.Implementations.DepartmentService.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Application\Implementations\DepartmentService.cs:行号 146
+   在 ETPMS.Web.Controllers.DepartmentController.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Web\Controllers\DepartmentController.cs:行号 121
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-08-28 08:29:53,351 ERROR - 请求异常：DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+2017-08-28 08:30:07,610 FATAL - System.ArgumentException: DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 38
+2017-08-28 08:30:12,477 ERROR - DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+System.ArgumentException: DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 44
+   在 ETPMS.Infrastructure.Repository.ETPMSBaseRepository`1.Update(TEntity entity, Boolean isSave) 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSBaseRepository.cs:行号 42
+   在 ETPMS.Application.Implementations.DepartmentService.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Application\Implementations\DepartmentService.cs:行号 146
+   在 ETPMS.Web.Controllers.DepartmentController.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Web\Controllers\DepartmentController.cs:行号 121
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-08-28 08:30:12,478 ERROR - 请求异常：DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+2017-08-28 08:31:22,769 FATAL - System.ArgumentException: DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 38
+2017-08-28 08:31:25,262 ERROR - DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+System.ArgumentException: DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 44
+   在 ETPMS.Infrastructure.Repository.ETPMSBaseRepository`1.Update(TEntity entity, Boolean isSave) 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSBaseRepository.cs:行号 42
+   在 ETPMS.Application.Implementations.DepartmentService.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Application\Implementations\DepartmentService.cs:行号 146
+   在 ETPMS.Web.Controllers.DepartmentController.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Web\Controllers\DepartmentController.cs:行号 121
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-08-28 08:31:25,263 ERROR - 请求异常：DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+2017-08-28 08:31:58,942 FATAL - System.ArgumentException: DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 38
+2017-08-28 08:32:00,446 ERROR - DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+System.ArgumentException: DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 44
+   在 ETPMS.Infrastructure.Repository.ETPMSBaseRepository`1.Update(TEntity entity, Boolean isSave) 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSBaseRepository.cs:行号 42
+   在 ETPMS.Application.Implementations.DepartmentService.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Application\Implementations\DepartmentService.cs:行号 146
+   在 ETPMS.Web.Controllers.DepartmentController.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Web\Controllers\DepartmentController.cs:行号 121
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-08-28 08:32:00,447 ERROR - 请求异常：DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+2017-08-28 08:32:25,590 FATAL - System.ArgumentException: DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 38
+2017-08-28 08:32:27,053 ERROR - DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+System.ArgumentException: DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 44
+   在 ETPMS.Infrastructure.Repository.ETPMSBaseRepository`1.Update(TEntity entity, Boolean isSave) 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSBaseRepository.cs:行号 42
+   在 ETPMS.Application.Implementations.DepartmentService.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Application\Implementations\DepartmentService.cs:行号 146
+   在 ETPMS.Web.Controllers.DepartmentController.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Web\Controllers\DepartmentController.cs:行号 121
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-08-28 08:32:27,054 ERROR - 请求异常：DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+2017-08-28 08:32:34,247 FATAL - System.ArgumentException: DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 38
+2017-08-28 08:32:38,123 ERROR - DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+System.ArgumentException: DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 44
+   在 ETPMS.Infrastructure.Repository.ETPMSBaseRepository`1.Update(TEntity entity, Boolean isSave) 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSBaseRepository.cs:行号 42
+   在 ETPMS.Application.Implementations.DepartmentService.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Application\Implementations\DepartmentService.cs:行号 146
+   在 ETPMS.Web.Controllers.DepartmentController.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Web\Controllers\DepartmentController.cs:行号 121
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-08-28 08:32:38,124 ERROR - 请求异常：DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+2017-08-28 08:33:19,480 FATAL - System.ArgumentException: DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 38
+2017-08-28 08:33:21,311 ERROR - DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+System.ArgumentException: DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 44
+   在 ETPMS.Infrastructure.Repository.ETPMSBaseRepository`1.Update(TEntity entity, Boolean isSave) 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSBaseRepository.cs:行号 42
+   在 ETPMS.Application.Implementations.DepartmentService.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Application\Implementations\DepartmentService.cs:行号 146
+   在 ETPMS.Web.Controllers.DepartmentController.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Web\Controllers\DepartmentController.cs:行号 121
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-08-28 08:33:21,312 ERROR - 请求异常：DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+2017-08-28 08:33:52,572 FATAL - System.ArgumentException: DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 38
+2017-08-28 08:33:54,128 ERROR - DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+System.ArgumentException: DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 44
+   在 ETPMS.Infrastructure.Repository.ETPMSBaseRepository`1.Update(TEntity entity, Boolean isSave) 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSBaseRepository.cs:行号 42
+   在 ETPMS.Application.Implementations.DepartmentService.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Application\Implementations\DepartmentService.cs:行号 146
+   在 ETPMS.Web.Controllers.DepartmentController.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Web\Controllers\DepartmentController.cs:行号 121
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-08-28 08:33:54,129 ERROR - 请求异常：DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+2017-08-28 08:34:01,648 FATAL - System.ArgumentException: DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 38
+2017-08-28 08:34:05,192 ERROR - DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+System.ArgumentException: DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 44
+   在 ETPMS.Infrastructure.Repository.ETPMSBaseRepository`1.Update(TEntity entity, Boolean isSave) 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSBaseRepository.cs:行号 42
+   在 ETPMS.Application.Implementations.DepartmentService.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Application\Implementations\DepartmentService.cs:行号 146
+   在 ETPMS.Web.Controllers.DepartmentController.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Web\Controllers\DepartmentController.cs:行号 121
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-08-28 08:34:05,193 ERROR - 请求异常：DEAPRTMENT_SHORT_NAME:DEAPRTMENT_SHORT_NAME 字段是必需的。<br/>DEPARTEMNT_DESCRIPTION:DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+2017-08-28 08:35:40,517  INFO - ETPMS initialized.
+2017-08-28 09:06:52,463  INFO - ETPMS initialized.
+2017-08-28 09:13:09,054 ERROR - F:\程序\项目实战\ETPMS\ETPMS.Web\Views\Department\DepartmentAdd.cshtml(50): error CS1660: Cannot convert lambda expression to type 'string' because it is not a delegate type
+System.Web.HttpCompileException (0x80004005): F:\程序\项目实战\ETPMS\ETPMS.Web\Views\Department\DepartmentAdd.cshtml(50): error CS1660: Cannot convert lambda expression to type 'string' because it is not a delegate type
+   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   在 System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetCompiledType(String virtualPath)
+   在 System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.GetCompiledType(String virtualPath)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-08-28 09:13:09,057 ERROR - 请求异常：F:\程序\项目实战\ETPMS\ETPMS.Web\Views\Department\DepartmentAdd.cshtml(50): error CS1660: Cannot convert lambda expression to type 'string' because it is not a delegate type
+2017-08-28 09:21:32,581  INFO - ETPMS initialized.
+2017-08-28 09:30:19,848  INFO - ETPMS initialized.
+2017-08-28 10:18:33,051  INFO - ETPMS initialized.
+2017-08-28 11:06:22,247  INFO - ETPMS initialized.
+2017-08-28 11:17:31,203  INFO - ETPMS initialized.
+2017-08-28 11:17:32,062 ERROR - 对于“ETPMS.Web.Controllers.DepartmentController”中方法“System.Web.Mvc.PartialViewResult DepartmentEdit(Int32, System.String)”的不可以为 null 的类型“System.Int32”的参数“departmentId”，参数字典包含一个 null 项。可选参数必须为引用类型、可以为 null 的类型或声明为可选参数。
+参数名: parameters
+System.ArgumentException: 对于“ETPMS.Web.Controllers.DepartmentController”中方法“System.Web.Mvc.PartialViewResult DepartmentEdit(Int32, System.String)”的不可以为 null 的类型“System.Int32”的参数“departmentId”，参数字典包含一个 null 项。可选参数必须为引用类型、可以为 null 的类型或声明为可选参数。
+参数名: parameters
+   在 System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-08-28 11:33:20,856  INFO - ETPMS initialized.
+2017-08-28 11:35:04,008 ERROR - 部门Id不能小于等于0~
+System.ArgumentException: 部门Id不能小于等于0~
+   在 ETPMS.Infrastructure.Utilities.Ensure.Meet[T](Func`2 func, T argument, String message) 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Utilities\Ensure.cs:行号 17
+   在 ETPMS.Web.Controllers.DepartmentController.UpdateDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Web\Controllers\DepartmentController.cs:行号 111
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-08-28 11:35:04,017 ERROR - 请求异常：部门Id不能小于等于0~
+2017-08-28 11:57:00,928  INFO - ETPMS initialized.
+2017-08-28 11:57:01,750 ERROR - 对于“ETPMS.Web.Controllers.DepartmentController”中方法“System.Web.Mvc.PartialViewResult DepartmentEdit(Int32, System.String)”的不可以为 null 的类型“System.Int32”的参数“departmentId”，参数字典包含一个 null 项。可选参数必须为引用类型、可以为 null 的类型或声明为可选参数。
+参数名: parameters
+System.ArgumentException: 对于“ETPMS.Web.Controllers.DepartmentController”中方法“System.Web.Mvc.PartialViewResult DepartmentEdit(Int32, System.String)”的不可以为 null 的类型“System.Int32”的参数“departmentId”，参数字典包含一个 null 项。可选参数必须为引用类型、可以为 null 的类型或声明为可选参数。
+参数名: parameters
+   在 System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-08-28 14:08:17,092 FATAL - System.ArgumentException: DEPARTEMNT_DESCRIPTION：DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 38
+2017-08-28 14:08:22,621 ERROR - DEPARTEMNT_DESCRIPTION：DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+System.ArgumentException: DEPARTEMNT_DESCRIPTION：DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+   在 ETPMS.Infrastructure.Repository.ETPMSDbSession.Commite() 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSDbSession.cs:行号 44
+   在 ETPMS.Infrastructure.Repository.ETPMSBaseRepository`1.Add(TEntity entity, Boolean isSave) 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Repository\ETPMSBaseRepository.cs:行号 27
+   在 ETPMS.Application.Implementations.DepartmentService.AddDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Application\Implementations\DepartmentService.cs:行号 116
+   在 ETPMS.Web.Controllers.DepartmentController.AddDepartment(DepartmentDto departmentDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Web\Controllers\DepartmentController.cs:行号 102
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-08-28 14:08:22,627 ERROR - 请求异常：DEPARTEMNT_DESCRIPTION：DEPARTEMNT_DESCRIPTION 字段是必需的。<br/>
+2017-08-28 14:10:25,401  INFO - ETPMS initialized.
+2017-08-28 15:07:45,382  INFO - ETPMS initialized.
+2017-08-28 15:17:46,975 ERROR - 值不能为 null。
+参数名: 密码信息不应该为空~
+System.ArgumentNullException: 值不能为 null。
+参数名: 密码信息不应该为空~
+   在 ETPMS.Infrastructure.Utilities.Ensure.NotNull[T](T argument, String argumentName) 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Utilities\Ensure.cs:行号 29
+   在 ETPMS.Web.Controllers.UserController.ChangePassword(PasswordChangeDto passwordChangeDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Web\Controllers\UserController.cs:行号 141
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-08-28 15:17:46,994 ERROR - 请求异常：值不能为 null。
+参数名: 密码信息不应该为空~
+2017-08-28 15:18:12,757 ERROR - 值不能为 null。
+参数名: 密码信息不应该为空~
+System.ArgumentNullException: 值不能为 null。
+参数名: 密码信息不应该为空~
+   在 ETPMS.Infrastructure.Utilities.Ensure.NotNull[T](T argument, String argumentName) 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Utilities\Ensure.cs:行号 29
+   在 ETPMS.Web.Controllers.UserController.ChangePassword(PasswordChangeDto passwordChangeDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Web\Controllers\UserController.cs:行号 141
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-08-28 15:18:12,757 ERROR - 请求异常：值不能为 null。
+参数名: 密码信息不应该为空~
+2017-08-28 15:19:28,764 ERROR - 值不能为 null。
+参数名: 密码信息不应该为空~
+System.ArgumentNullException: 值不能为 null。
+参数名: 密码信息不应该为空~
+   在 ETPMS.Infrastructure.Utilities.Ensure.NotNull[T](T argument, String argumentName) 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Utilities\Ensure.cs:行号 29
+   在 ETPMS.Web.Controllers.UserController.ChangePassword(PasswordChangeDto passwordChangeDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Web\Controllers\UserController.cs:行号 141
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-08-28 15:19:28,764 ERROR - 请求异常：值不能为 null。
+参数名: 密码信息不应该为空~
+2017-08-28 15:19:46,088 ERROR - 值不能为 null。
+参数名: 密码信息不应该为空~
+System.ArgumentNullException: 值不能为 null。
+参数名: 密码信息不应该为空~
+   在 ETPMS.Infrastructure.Utilities.Ensure.NotNull[T](T argument, String argumentName) 位置 F:\程序\项目实战\ETPMS\ETPMS.Infrastructure\Utilities\Ensure.cs:行号 29
+   在 ETPMS.Web.Controllers.UserController.ChangePassword(PasswordChangeDto passwordChangeDto) 位置 F:\程序\项目实战\ETPMS\ETPMS.Web\Controllers\UserController.cs:行号 141
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-08-28 15:19:46,089 ERROR - 请求异常：值不能为 null。
+参数名: 密码信息不应该为空~
+2017-08-28 15:29:01,015  INFO - ETPMS initialized.
+2017-08-28 15:31:07,627  INFO - ETPMS initialized.
+2017-08-28 15:35:32,708  INFO - ETPMS initialized.
+2017-08-28 15:36:13,908  INFO - 用户-ZL10820成功登录系统
+2017-08-28 15:36:43,545  INFO - 用户-ZL10820成功登录系统
+2017-08-28 15:37:00,562  INFO - 用户-ZL10820成功登录系统
+2017-08-28 15:39:37,836  INFO - ETPMS initialized.
+2017-08-28 15:40:49,207  INFO - 用户-ZL10820成功登录系统
+2017-08-28 15:43:52,804  INFO - ETPMS initialized.
+2017-08-28 15:50:43,819  INFO - 用户-ZS5920成功登录系统
+2017-08-28 15:51:25,365  INFO - 用户-ZL10820成功登录系统
+2017-08-28 15:51:59,310  INFO - 用户-ZL10820成功登录系统

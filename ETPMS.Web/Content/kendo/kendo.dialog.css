@@ -1,0 +1,82 @@
+﻿.k-dialog.k-window {
+    border-radius: 0px;
+    border-color: #bdbdbd;
+    box-shadow: 1px 1px 7px 1px #ffffff;
+    background-color: #ffffff;
+}
+.k-dialog.k-widget {
+    color: #666666;
+}
+.k-dialog.k-header {
+    border-color: #dbdbdb;
+    background-color: #ffffff;
+    background-image: none;
+    background-position: 50% 50%;
+    color: #666666;
+}
+.k-window-titlebar {
+    border-radius: 0px 0px 0 0;
+}
+.k-dialog.k-window-content {
+    border-radius: 0 0 0px 0px;
+}
+.k-dialog.k-content {
+    color: #666666;
+    background-color: #ffffff;
+    border-color: #dbdbdb;
+}
+.k-dialog.k-button {
+    border-radius: 0px;
+    box-shadow: none;
+    color: #666666;
+    border-color: #b483c8;
+    background-color: #ffffff;
+    background-image: none;
+    background-position: 50% 50%;
+}
+.k-dialog.k-button:hover {
+    color: #fff;
+    background-color: #b483c8;
+}
+.k-dialog.k-button:focus {
+    border-color: #fff;
+}
+.k-dialog.k-window-titlebar .k-link {
+    border-radius: 0px;
+}
+.k-dialog.k-link:link {
+    color: #666666;
+}
+.k-dialog.k-window-action {
+    border-color: transparent;
+}
+.k-dialog.k-icon {
+    background-image: url('../image/sprite.png');
+    border-color: transparent;
+    opacity: 0.8;
+}
+.k-dialog.k-link:link {
+    color: #666666;
+}
+.k-dialog{
+  padding-bottom:51px;
+}
+.k-dialog .k-button-area{
+  position         : absolute;
+  z-index          : 1000;
+  left             : 0;
+  right            : 0;
+  bottom           : 0;
+  height           : 50px;
+  border-top       : 1px solid #ccc;
+  background-color : #fff;
+  text-align       : right;
+}
+.k-dialog .k-dialog-button{
+  display      : inline-block;
+  min-width    : 64px;
+  line-height  : 28px;
+  padding      : 0 10px;
+  margin-top   : 10px;
+  margin-right : 10px;
+}

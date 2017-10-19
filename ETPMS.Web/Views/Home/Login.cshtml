@@ -1,0 +1,109 @@
+﻿
+@model ETPMS.Web.Models.LoginModel
+@{Layout = null;}
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>管理用户登录</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="~/Scripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery.form.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/bootstrap.min.js" type="text/javascript"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <style>
+        .col-center-block {
+            float: none;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        html,
+        body,
+        .container {
+            height: 100%;
+            width: 100%;
+        }
+
+        .container {
+            display: table;
+            vertical-align: middle;
+        }
+
+        .vertical-center-row {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .login-screen-bg {
+            background-image: url('../../Content/images/bg_001.jpg');
+            background-size: cover;
+        }
+
+        .login-widget .panel-heading {
+            color:#fff;
+            text-align:center;
+        }
+
+        .login-widget {
+            padding: 50px;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0px 0px 1px 1px rgba(161, 159, 159, 0.1);
+            background-color: #485563;
+            
+        }
+    </style>
+</head>
+<body class="login-screen-bg">
+    <div class="container">
+        <div class="row vertical-center-row">
+            <div class="col-md-4 col-center-block login-widget">
+                <h1 class="panel-heading">管理员登录</h1>
+                @using (Html.BeginForm("Login", "Home", new { returnUrl = Request.QueryString["ReturnUrl"] }, FormMethod.Post, new { role = "form", id = "formLogin" }))
+                {
+                    <div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-user fa-fw"></i></div>
+                                @Html.TextBoxFor(m => m.UserCode, new { @class = "form-control", autofocus = "autofocus", placeholder = "请输入用户名", required = true })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-key fa-fw"></i></div>
+                                @Html.PasswordFor(m => m.PassWord, new { @class = "form-control", placeholder = "请输入密码", required = true })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox">
+                                @Html.CheckBoxFor(m => m.RememberMe) 记住我
+                                <div class="pull-right"><a href="#" data-toggle="modal" style="text-decoration:none;">忘记密码?</a></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block btn-login">登录</button>
+                        </div>
+                        @if (ViewBag._errorMsgDisplay != null && ViewBag._errorMsgDisplay)
+                        {
+                            Model.PassWord = string.Empty;
+                            <div class="form-group" style="line-height:10px;">
+                                <div class="alert alert-danger">
+                                    @Html.ValidationSummary(true)
+                                    @Html.ValidationMessageFor(m => m.UserCode)
+                                    @Html.ValidationMessageFor(m => m.PassWord)
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>

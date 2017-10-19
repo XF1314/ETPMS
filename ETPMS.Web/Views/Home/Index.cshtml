@@ -1,0 +1,64 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "设备测试项目管理系统";
+}
+
+@section css{
+
+}
+
+@section scripts{
+    <script>
+        $(function () {
+            /*为tabStrip标签创建右键菜单*/
+            var $tabMenu = $("#tabMenu").kendoContextMenu({
+                orientation: "vertical",
+                target: "#tabstrip",
+                filter: ".k-item",
+                animation: {
+                    open: { effects: "fadeIn" },
+                    duration: 500
+                },
+                activate: function (e) {
+                    $(e.target).find(".k-state-active").removeClass("k-state-active");
+                },
+                select: function (e) {
+                    var item = $(e.item);
+                    var target = $(e.target);
+                    var action = item.attr("data-action");
+                    switch (action) {
+                        //刷新当前标签页
+                        case "refresh":
+                            $tabStrip.reload(target);
+                            break;
+                        //刷新所有标签页
+                        case "refresh-all":
+                            $tabStrip.reload("li");
+                            break;
+                        //关闭当前标签页
+                        case "close":
+                            target.find("[data-type='remove']").click()
+                            break;
+                        //关闭除当前标签页外的所有标签页
+                        case "close-other":
+                            target.siblings().find("[data-type='remove']").click()
+                            break;
+                    }
+                }
+            });
+            //var $originalTabMenu = $tabMenu.clone(true);
+            var homeTabStripItem = [{
+                text: "主页",
+                imageUrl: "../content/icons/menu/home.png",
+                contentUrl: "/Home/Dashboard",
+                encoded: false
+            }];
+            $tabMenu.clone(true).find(".k-state-active").removeClass("k-state-active");
+            /*添加“主页”标签*/
+            $tabStrip.append(homeTabStripItem);
+            $tabStrip.select(0);
+            $tabStrip.applyReorderable();
+        });
+    </script>
+}

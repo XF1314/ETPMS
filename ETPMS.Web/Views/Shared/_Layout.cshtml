@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title </title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("css", required: false)
+</head>
+<body style="overflow:hidden;height:100%;">
+    @*主体部分*@
+    <div id="vertical" class="pf-full-screen-panel">
+        <div id="top-pane" style="background:#008edc url(/Content/images/Header_bg.png) right 0 no-repeat;">
+            <div class="pane-content">@Html.Partial("_ToplToolBar")<img src="~/Content/images/Logo.png" /></div>
+        </div>
+        <div id="middle-pane">
+            <div id="horizontal" style="height:100%;">
+                <div id="left-pane">
+                    <div class="pane-content">
+                        <ul id="menu"></ul>
+                    </div>
+                </div>
+                <div id="center-pane" class="pf-gray-panel">
+                    <div class="pane-content" style="height:100%;overflow:hidden;">
+                        <div id="progress" class="k-loading-mask">
+                            <span class="k-loading-text">正在载入...</span>
+                            <div class="k-loading-image"></div>
+                            <div class="k-loading-color"></div>
+                        </div>
+                        <div id="tabstrip" class="pf-full-screen-panel">
+                            @RenderBody()
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*标签页右键菜单*@
+    <ul id="tabMenu">
+        <li data-action="refresh">刷新</li>
+        <li data-action="refresh-all">刷新所有标签页</li>
+        <li class="k-separator"></li>
+        <li data-action="close">关闭标签页</li>
+        <li data-action="close-other">关闭其他标签页</li>
+    </ul>
+    @*版权信息弹窗*@
+    <div id="copyright-window"></div>
+    @*提示窗口*@
+    <div id="notification"></div>
+    <script id="success-template" type="text/x-kendo-template">
+        <div class="notifi notifi-success" >
+            <img src="/Content/icons/common/notification-icon-success.png" />
+            <h3>#= message #</h3>
+        </div>
+    </script>
+    <script id="error-template" type="text/x-kendo-template">
+        <div class="notifi notifi-error">
+            <img src="/Content/icons/common/notification-icon-error.png" />
+            <h3>#= message #</h3>
+        </div>
+    </script>
+    <script id="info-template" type="text/x-kendo-template">
+        <div class="notifi notifi-info">
+            <img src="/Content/icons/common/notification-icon-info.png" />
+            <h3>#= message #</h3>
+        </div>
+    </script>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/kendo")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/three")
+    <script type="text/javascript">
+        kendo.culture("zh-CN");//设置语言环境
+        var $verticalSplitter;//内容面板垂直分格
+        var $horizontalSplitter;//内容面板水平分格
+        var $copyrightWindow;//版权窗口
+        var $popuNotification ;//通知弹框
+        var $tabStrip;//选项卡
+        var $menu;//菜单
+        var $router;//页面路由
+        var $notification= {
+            showSuccess:function(message){
+                $popuNotification.show({message: message,},"success");
+            },
+            showError:function(message){
+                $popuNotification.show({message: message,},"error");
+            },
+            showInfo:function(message){
+                $popuNotification.show({message: message,},"info");
+            },
+            show:function(message, state){
+                $popuNotification.show({message: message,},state);
+            }      
+        };
+        $(document).ready(function () {
+            //内容面板垂直分格
+            $verticalSplitter = $("#vertical").kendoSplitter({
+                orientation: "vertical",
+                panes: [
+                    { collapsible: true, resizable: false, scrollable: false, size: "60px" },
+                    { collapsible: false }
+                ]
+            });
+            //内容面板水平分格
+            $horizontalSplitter = $("#horizontal").kendoSplitter({
+                panes: [
+                    { collapsible: true, collapsedSize: "0px;", size: "60px", max: "400px", min: "60px" },
+                    { collapsible: false, contentUrl: "" }
+                ]
+            }).data("kendoSplitter");
+            //通知框
+            $popuNotification = $("#notification").kendoNotification({
+                stacking: "down",
+                autoHideAfter: 10000,
+                show: onNotificationShow,
+                templates: [
+                    {
+                        type: "success",
+                        template: $("#success-template").html()
+                    },
+                    {
+                        type: "error",
+                        template: $("#error-template").html()
+                    },
+                    {
+                        type: "info",
+                        template: $("#info-template").html()
+                    }
+                ]
+            }).data("kendoNotification");
+            //版权信息
+            $copyrightWindow = $("#copyright-window").kendoWindow({
+                width: "550",
+                height:"300",
+                title: "版权声明",
+                modal: true,
+                visible: false,
+                resizable: false,
+                content: "@Url.Action("Copyright", "Home")"
+            }).data("kendoWindow");
+            //左侧菜单
+            $menu = $("#menu").kendoMenu({
+                orientation: "vertical",
+                dataSource: @Html.Action("GetAuthorizedMenus", "Menu"),
+                animation: { open: { effects: "zoomIn", duration: 100 } }
+            }).data("kendoMenu");
+            //选项卡
+            $tabStrip = $("#tabstrip").kendoReorderableTabStrip({
+                animation: { open: { effects: "fadeIn" } },
+                select: function (e) {
+                    var url = $(e.item).children("[data-content-url]:eq(0)").attr("data-content-url");
+                    $router.navigate(url, true);
+                },
+                contentLoad: function (e) { $("#progress").hide(); },
+                error: function (e) { $("#progress").hide(); }
+            }).data("kendoReorderableTabStrip");
+            //添加选项卡上关闭按钮的事件
+            $tabStrip.tabGroup.on("click", "[data-type='remove']", function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                var item = $(e.target).closest(".k-item");
+                var otherItem = item.next();
+                otherItem = otherItem.length ? otherItem : item.prev();
+                $tabStrip.remove(item.index());
+                if (otherItem.length) $tabStrip.select(otherItem);
+                else $router.navigate("", true);
+            });
+            //绑定版权菜单事件
+            $(".pf-item-copyright").bind("click", function () {
+                $copyrightWindow.open().center();
+            });
+            //初始化页面路由
+            $router = new kendo.Router({
+                change: function (e) {
+                    if ("" == e.url || "/" == e.url || "/Home/Index" == e.url || "/Home/Dashboard" == e.url) e.preventDefault();
+                }
+            });
+            $router.route("*url", function (url) {getContent(url, null);});
+            //开始监听地址栏锚点的变化，获取锚点地址的内容到内容区面板
+            $router.start();
+        });
+
+        //Ajax方式获取内容面板的内容
+        function getContent (url, data) {
+            var index = $tabStrip.tabGroup.children("li").has("span[data-content-url='" + url + "']").index();
+            if (index >= 0) {
+                $tabStrip.select(index);
+            } else {
+                $("#progress").show();
+                var menuItemData = getMenuItemData(url);
+                var newTabStripItem = [{
+                    text: menuItemData.text + " <button data-type=\"remove\" class=\"k-button k-button-icon\"><span class=\"k-icon k-font-icon k-i-x\"></span></button>",
+                    imageUrl: menuItemData.imgUrl,
+                    contentUrl: url,
+                    encoded: false
+                }];
+                if ($tabStrip.items().length >= 1) {
+                    $tabStrip.insertAfter(newTabStripItem, $tabStrip.select());
+                    $tabStrip.select($tabStrip.select().index() + 1)
+                } else {
+                    $tabStrip.append(newTabStripItem);
+                    $tabStrip.select(0);
+                }
+                $tabStrip.applyReorderable();
+            }
+        }
+
+        //根据url查找到菜单中包含此url的项，并返回此菜单项的icon图片src和链接文本
+        function getMenuItemData (url) {
+            var menuElement = $("#menu a[href='#" + url + "']").eq(0);
+            var imgUrl = menuElement.children("img.k-image").attr("src");
+            var text = menuElement.text();
+            return { text: text, imgUrl: imgUrl }
+        }
+
+        function onNotificationShow(e) {
+            if (!$("." + e.sender._guid)[1]) {
+                var element = e.element.parent(),
+                    eWidth = element.width(),
+                    eHeight = element.height(),
+                    wWidth = $(window).width(),
+                    wHeight = $(window).height(),
+                    newTop, newLeft,newWidth;
+
+                newWidth = eWidth+20;
+                newLeft = Math.floor(wWidth / 2 - eWidth / 2);
+                newTop = Math.floor(wHeight / 2 - eHeight / 2);
+
+                e.element.parent().css({top: newTop, left: newLeft,width:newWidth});
+            }
+        }
+    </script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

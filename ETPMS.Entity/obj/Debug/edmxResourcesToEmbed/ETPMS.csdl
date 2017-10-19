@@ -1,0 +1,1231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ETPMSEntity" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BD_CONFIG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CONFIG_CATEGORY" Type="Int32" Nullable="false" />
+    <Property Name="CONFIG_NAME" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CONFIG_VALUE" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CONFIG_DESCRIPTION" Type="String" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CONFIG_STATUS" Type="Byte" Nullable="false" />
+    <Property Name="OPERATOR_ID" Type="Int32" Nullable="false" />
+    <Property Name="CREATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UPDATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="EP_CONTRACT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CONTRACT_CODE" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CONTRACT_NAME" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CONTRACT_TYPE_ID" Type="Byte" Nullable="false" />
+    <Property Name="CONTRACT_STATUS" Type="Byte" Nullable="false" />
+    <Property Name="PROJECT_CODE" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PROJECT_NAME" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PLANT_ID" Type="Int32" Nullable="false" />
+    <Property Name="PLANT_CONTRACTS" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SIGNING_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CONTRACT_VALUE" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="RECEIVABLE_VALUE" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="RECEIVED_VALUE" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SUBCONTRACT_VALUE" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SUBCONTRACT_PAYMENT" Type="Byte" Nullable="false" />
+    <Property Name="OPERATOR_ID" Type="Int32" Nullable="false" />
+    <Property Name="CREATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UPDATE_TINE" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="EP_POWER_PLANT" Relationship="Self.FK_EP_CONTRACT_EP_CONTRACT" FromRole="EP_CONTRACT" ToRole="EP_POWER_PLANT" />
+    <NavigationProperty Name="EP_EQUIPMENT_TASK" Relationship="Self.FK_EP_TASK_EP_CONTRACT" FromRole="EP_CONTRACT" ToRole="EP_EQUIPMENT_TASK" />
+  </EntityType>
+  <EntityType Name="EP_CONTRACT_RELEQUIPMENT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MENUFACTURER_ID" Type="Int32" Nullable="false" />
+    <Property Name="EQUIPMENT_TYPE_ID" Type="Byte" Nullable="false" />
+    <Property Name="EQUIPMENT_CODE" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EQUIPMENT_DESCRIPTION" Type="String" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PRODUCTION_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="USAGE_TYPE_ID" Type="Byte" Nullable="false" />
+    <Property Name="EXPERIMENT_STATUS" Type="Byte" Nullable="false" />
+    <Property Name="IS_DELETED" Type="Boolean" Nullable="false" />
+    <Property Name="OPERATOR_ID" Type="Int32" Nullable="false" />
+    <Property Name="CREATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UPDATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="EP_EQUIPMENT_MENUFACTURER" Relationship="Self.FK_EP_CONTRACT_RELEQUIPMENT_EP_EQUIPMENT_MENUFACTURER" FromRole="EP_CONTRACT_RELEQUIPMENT" ToRole="EP_EQUIPMENT_MENUFACTURER" />
+    <NavigationProperty Name="OD_BASIC" Relationship="Self.FK_OD_BASIC_EP_CONTRACT_RELEQUIPMENT" FromRole="EP_CONTRACT_RELEQUIPMENT" ToRole="OD_BASIC" />
+  </EntityType>
+  <EntityType Name="EP_DELEGATION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TASK_ID" Type="Int32" Nullable="false" />
+    <Property Name="DELEGATION__CODE" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DELEGATION_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DELEGATION_COST" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DELEGATION_STATUS" Type="Byte" Nullable="false" />
+    <Property Name="CLIENT_NAME" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CLIENT_CONTRACTS_NAME" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CLIENT_CONTRACT_INFORMATION" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SERVER_NAME" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SERVER_CONTRACTS_NAME" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SERVER_CONTRACT_INFORMATION" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RECEIVING_TYPE_ID" Type="Byte" Nullable="false" />
+    <Property Name="REMAINING_PROCESSING_TYPE_ID" Type="Byte" Nullable="false" />
+    <Property Name="REMARK" Type="String" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OPERATOR_ID" Type="Int32" Nullable="false" />
+    <Property Name="CREATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UPDATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="EP_DELEGATION_RELEXPRESS" Relationship="Self.FK_EP_DELEGATION_RELEXPRESS_EP_EXPERIMENT_DELEGATION" FromRole="EP_DELEGATION" ToRole="EP_DELEGATION_RELEXPRESS" />
+    <NavigationProperty Name="EP_DELEGATION_RELITEM" Relationship="Self.FK_EP_DELEGATION_RELITEM_EP_EXPERIMENT_DELEGATION" FromRole="EP_DELEGATION" ToRole="EP_DELEGATION_RELITEM" />
+    <NavigationProperty Name="EP_EQUIPMENT_TASK" Relationship="Self.FK_EP_EXPERIMENT_DELEGATION_EP_TASK" FromRole="EP_DELEGATION" ToRole="EP_EQUIPMENT_TASK" />
+  </EntityType>
+  <EntityType Name="EP_DELEGATION_RELEXPRESS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DELEGATION_ID" Type="Int32" Nullable="false" />
+    <Property Name="MATERIAL_TYPE_ID" Type="Byte" Nullable="false" />
+    <Property Name="EXPRESS_COMPANY_ID" Type="Byte" Nullable="false" />
+    <Property Name="EXPRESS_ORDER_CODE" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DELIVERY_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IS_DELETED" Type="Boolean" Nullable="false" />
+    <Property Name="OPERATOR_ID" Type="Int32" Nullable="false" />
+    <Property Name="CREATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UPDATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="EP_DELEGATION" Relationship="Self.FK_EP_DELEGATION_RELEXPRESS_EP_EXPERIMENT_DELEGATION" FromRole="EP_DELEGATION_RELEXPRESS" ToRole="EP_DELEGATION" />
+  </EntityType>
+  <EntityType Name="EP_DELEGATION_RELITEM">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DELEGATION_ID" Type="Int32" Nullable="false" />
+    <Property Name="ITEM_CODE" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ITEM_NAME" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ITEM_DESCRIPTION" Type="String" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ITEM_QUANTITY" Type="Int32" Nullable="false" />
+    <Property Name="ITEM_STATUS" Type="Byte" Nullable="false" />
+    <Property Name="REMARK" Type="String" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OPERATOR_ID" Type="Int32" Nullable="false" />
+    <Property Name="CREATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UPDATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="EP_DELEGATION" Relationship="Self.FK_EP_DELEGATION_RELITEM_EP_EXPERIMENT_DELEGATION" FromRole="EP_DELEGATION_RELITEM" ToRole="EP_DELEGATION" />
+  </EntityType>
+  <EntityType Name="EP_DOCUMENT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DOCUMENT_NAME" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DOCUMENT_TYPE_ID" Type="Byte" Nullable="false" />
+    <Property Name="EQUIPMENT_TYPE_ID" Type="Byte" Nullable="false" />
+    <Property Name="URL" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="REMARK" Type="String" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IS_DELETED" Type="Boolean" Nullable="false" />
+    <Property Name="OPERATOR_ID" Type="Int32" Nullable="false" />
+    <Property Name="CREATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UPDATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="EP_EQUIPMENT_MENUFACTURER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MENUFACTURER_NAME" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MENUFACTURER_SHORT_NAME" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MENUFACTURER_DESCRIPTION" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CONTRACTS_NAME" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ADDRESS" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TELEPHONE" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IS_DELETED" Type="Boolean" Nullable="false" />
+    <Property Name="OPERATOR_ID" Type="Int32" Nullable="false" />
+    <Property Name="CREATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UPDATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="EP_CONTRACT_RELEQUIPMENT" Relationship="Self.FK_EP_CONTRACT_RELEQUIPMENT_EP_EQUIPMENT_MENUFACTURER" FromRole="EP_EQUIPMENT_MENUFACTURER" ToRole="EP_CONTRACT_RELEQUIPMENT" />
+  </EntityType>
+  <EntityType Name="EP_EQUIPMENT_TASK">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CONTRACT_ID" Type="Int32" Nullable="false" />
+    <Property Name="TASK_CODE" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TASK_STATUS" Type="Byte" Nullable="false" />
+    <Property Name="TASK_DESCRIPTION" Type="String" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TASK_LEADER_ID" Type="Int32" Nullable="false" />
+    <Property Name="TAST_STAFF_IDS" Type="String" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BEGIN_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="END_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="REMARK" Type="String" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="APPROVER_ID" Type="Int32" Nullable="false" />
+    <Property Name="OPERATOR_ID" Type="Int32" Nullable="false" />
+    <Property Name="CREATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UPDATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="EP_CONTRACT" Relationship="Self.FK_EP_TASK_EP_CONTRACT" FromRole="EP_EQUIPMENT_TASK" ToRole="EP_CONTRACT" />
+    <NavigationProperty Name="EP_DELEGATION" Relationship="Self.FK_EP_EXPERIMENT_DELEGATION_EP_TASK" FromRole="EP_EQUIPMENT_TASK" ToRole="EP_DELEGATION" />
+    <NavigationProperty Name="EP_EXPERIMENT_DOCUMENT" Relationship="Self.FK_EP_EXPERIMENT_DOCUMENT_EP_TASK" FromRole="EP_EQUIPMENT_TASK" ToRole="EP_EXPERIMENT_DOCUMENT" />
+    <NavigationProperty Name="UM_USERINFO" Relationship="ETPMSEntity.FK_EP_TASK_UM_USERINFO" FromRole="EP_EQUIPMENT_TASK" ToRole="UM_USERINFO" />
+    <NavigationProperty Name="UM_USERINFO1" Relationship="ETPMSEntity.FK_EP_TASK_UM_USERINFO1" FromRole="EP_EQUIPMENT_TASK" ToRole="UM_USERINFO" />
+  </EntityType>
+  <EntityType Name="EP_EXPERIMENT_DOCUMENT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TASK_ID" Type="Int32" Nullable="false" />
+    <Property Name="DOCUMENT_NAME" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DOCUMENT_DESCRIPTION" Type="String" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DOCUMENT_URL" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DOCUMENT_STATUS" Type="Byte" Nullable="false" />
+    <Property Name="REMARK" Type="String" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="APPROVER_ID" Type="Int32" Nullable="false" />
+    <Property Name="OPERATOR_ID" Type="Int32" Nullable="false" />
+    <Property Name="CREATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UPDATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="EP_EQUIPMENT_TASK" Relationship="Self.FK_EP_EXPERIMENT_DOCUMENT_EP_TASK" FromRole="EP_EXPERIMENT_DOCUMENT" ToRole="EP_EQUIPMENT_TASK" />
+    <NavigationProperty Name="UM_USERINFO" Relationship="ETPMSEntity.FK_EP_EXPERIMENT_DOCUMENT_UM_USERINFO" FromRole="EP_EXPERIMENT_DOCUMENT" ToRole="UM_USERINFO" />
+  </EntityType>
+  <EntityType Name="EP_POWER_PLANT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PLANT_NAME" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PLANT_SHORT_NAME" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PLANT_DESCRIPTION" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CONTRACTS_NAME" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TELEPHONE" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IS_DELETED" Type="Boolean" Nullable="false" />
+    <Property Name="OPERATOR_ID" Type="Int32" Nullable="false" />
+    <Property Name="CREATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UPDATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="EP_CONTRACT" Relationship="Self.FK_EP_CONTRACT_EP_CONTRACT" FromRole="EP_POWER_PLANT" ToRole="EP_CONTRACT" />
+  </EntityType>
+  <EntityType Name="OD_BASIC">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CONTRACT_RELEQUIPMENT_ID" Type="Int32" Nullable="false" />
+    <Property Name="RECODE_CODE" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EQUIPMENT_TYPE_ID" Type="Byte" Nullable="false" />
+    <Property Name="EQUIPMENT_DESCRIPTION" Type="String" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TEST_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TEST_INSTITUTION" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TEST_PERSONNEL" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SUPERVISORS" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DATA_STATUS" Type="Byte" Nullable="false" />
+    <Property Name="OPERATOR_ID" Type="Int32" Nullable="false" />
+    <Property Name="CREATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UPDATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="EP_CONTRACT_RELEQUIPMENT" Relationship="Self.FK_OD_BASIC_EP_CONTRACT_RELEQUIPMENT" FromRole="OD_BASIC" ToRole="EP_CONTRACT_RELEQUIPMENT" />
+    <NavigationProperty Name="OD_BIAS" Relationship="Self.FK_OD_BIAS_OD_BASIC" FromRole="OD_BASIC" ToRole="OD_BIAS" />
+    <NavigationProperty Name="OD_CRUSHER_GRANULARITY" Relationship="Self.FK_OD_CRUSHER_GRANULARITY_OD_BASIC" FromRole="OD_BASIC" ToRole="OD_CRUSHER_GRANULARITY" />
+    <NavigationProperty Name="OD_ELECTRIC_DIVIDING_MACHINE" Relationship="Self.FK_OD_CRUSHING_DIVIDING_MACHINE_OD_BASIC" FromRole="OD_BASIC" ToRole="OD_ELECTRIC_DIVIDING_MACHINE" />
+    <NavigationProperty Name="OD_CRUSHING_DIVIDING_MACHINE" Relationship="Self.FK_OD_CRUSHING_DIVIDING_MACHINE_OD_BASIC1" FromRole="OD_BASIC" ToRole="OD_CRUSHING_DIVIDING_MACHINE" />
+    <NavigationProperty Name="OD_CRUSHING_MACHINE" Relationship="Self.FK_OD_CRUSHING_MACHINE_OD_BASIC" FromRole="OD_BASIC" ToRole="OD_CRUSHING_MACHINE" />
+    <NavigationProperty Name="OD_DIEVIDER_GRANULARITY" Relationship="Self.FK_OD_GRANULARITY_OD_BASIC" FromRole="OD_BASIC" ToRole="OD_DIEVIDER_GRANULARITY" />
+    <NavigationProperty Name="OD_INTEGRATED_PREPARATION_MACHINE" Relationship="Self.FK_OD_INTEGRATED_PREPARATION_MACHINE_OD_BASIC" FromRole="OD_BASIC" ToRole="OD_INTEGRATED_PREPARATION_MACHINE" />
+    <NavigationProperty Name="OD_MILLER_GRANULARITY" Relationship="Self.FK_OD_MILLER_GRANULARITY_OD_BASIC" FromRole="OD_BASIC" ToRole="OD_MILLER_GRANULARITY" />
+    <NavigationProperty Name="OD_MILLING_MACHINE" Relationship="Self.FK_OD_MILLING_MACHINE_OD_BASIC" FromRole="OD_BASIC" ToRole="OD_MILLING_MACHINE" />
+    <NavigationProperty Name="OD_MT_LOSSES" Relationship="Self.FK_OD_MT_LOSSES_OD_BASIC" FromRole="OD_BASIC" ToRole="OD_MT_LOSSES" />
+    <NavigationProperty Name="OD_PRECISION" Relationship="Self.FK_OD_PRECISION_OD_BASIC" FromRole="OD_BASIC" ToRole="OD_PRECISION" />
+    <NavigationProperty Name="OD_RIFFLE_DEVIDING_MACHINE" Relationship="Self.FK_OD_RIFFLE_DEVIDING_MACHINE_OD_BASIC" FromRole="OD_BASIC" ToRole="OD_RIFFLE_DEVIDING_MACHINE" />
+    <NavigationProperty Name="OD_SAMPLING_MACHINE" Relationship="Self.FK_OD_SAMPLING_MACHINE_OD_BASIC" FromRole="OD_BASIC" ToRole="OD_SAMPLING_MACHINE" />
+    <NavigationProperty Name="OD_SPLITTING_RATION" Relationship="Self.FK_OD_SPLITTING_RATION_OD_BASIC" FromRole="OD_BASIC" ToRole="OD_SPLITTING_RATION" />
+    <NavigationProperty Name="OD_TEST_INSTRUMENT" Relationship="Self.FK_OD_TEST_INSTRUMENT_OD_BASIC" FromRole="OD_BASIC" ToRole="OD_TEST_INSTRUMENT" />
+    <NavigationProperty Name="OD_WEIGHT_LOSSES" Relationship="Self.FK_OD_WEIGHT_LOSSES_OD_WEIGHT_LOSSES" FromRole="OD_BASIC" ToRole="OD_WEIGHT_LOSSES" />
+    <NavigationProperty Name="OD_UNIFIED_PREPARATION_MACHINE" Relationship="Self.FK_UNIFIED_PREPARATION_MACHINE_OD_BASIC" FromRole="OD_BASIC" ToRole="OD_UNIFIED_PREPARATION_MACHINE" />
+  </EntityType>
+  <EntityType Name="OD_BIAS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OD_ID" Type="Int32" Nullable="false" />
+    <Property Name="BIAS_CODE" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RESERVED_SAMPLE" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="REJECTED_SAMPLE" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="MANUAL_SAMPLE" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="REMARK" Type="String" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CREATOR_ID" Type="Int32" Nullable="false" />
+    <Property Name="CREATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="OD_BASIC" Relationship="Self.FK_OD_BIAS_OD_BASIC" FromRole="OD_BIAS" ToRole="OD_BASIC" />
+  </EntityType>
+  <EntityType Name="OD_CRUSHER_GRANULARITY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OD_ID" Type="Int32" Nullable="false" />
+    <Property Name="GRANULARITY_CODE" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GRANULARITY_TYPE_ID" Type="Byte" Nullable="false" />
+    <Property Name="SAMPLE_WEIGHT" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="GRANULARITY_WEIGHT_RANGE1" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="GRANULARITY_WEIGHT_RANGE2" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="GRANULARITY_RATION_RANGE1" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="GRANULARITY_RATION_RANGE2" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <NavigationProperty Name="OD_BASIC" Relationship="Self.FK_OD_CRUSHER_GRANULARITY_OD_BASIC" FromRole="OD_CRUSHER_GRANULARITY" ToRole="OD_BASIC" />
+  </EntityType>
+  <EntityType Name="OD_CRUSHING_DIVIDING_MACHINE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OD_ID" Type="Int32" Nullable="false" />
+    <Property Name="SAMPLE_CODE" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="COAL_SOURCE" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="COAL_TYPE_ID" Type="Int32" Nullable="false" />
+    <Property Name="ENVIRONMENT_TEMPERATURE" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="ENVIRONMENT_HUMIDITY" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="MAXIMUM_GRANULARITY" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="PRECISION_SAMPLING_TYPE_ID" Type="Int32" Nullable="false" />
+    <Property Name="BIAS_SAMPLING_TYPE_ID" Type="Int32" Nullable="false" />
+    <Property Name="MT_PREPARATION_TYPE_ID" Type="Int32" Nullable="false" />
+    <Property Name="MT_TEST_TYPE_ID" Type="Int32" Nullable="false" />
+    <Property Name="OUTPUT_GRANULARITY" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PRODUCTIVITY" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="SPLITTING_RATION" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="OD_BASIC" Relationship="Self.FK_OD_CRUSHING_DIVIDING_MACHINE_OD_BASIC1" FromRole="OD_CRUSHING_DIVIDING_MACHINE" ToRole="OD_BASIC" />
+  </EntityType>
+  <EntityType Name="OD_CRUSHING_MACHINE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OD_ID" Type="Int32" Nullable="false" />
+    <Property Name="MAXIMUM_GRANULARITY" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="OUTPUT_GRANULARITY" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PRODUCTIVITY" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <NavigationProperty Name="OD_BASIC" Relationship="Self.FK_OD_CRUSHING_MACHINE_OD_BASIC" FromRole="OD_CRUSHING_MACHINE" ToRole="OD_BASIC" />
+  </EntityType>
+  <EntityType Name="OD_DIEVIDER_GRANULARITY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OD_ID" Type="Int32" Nullable="false" />
+    <Property Name="GRANULARITY_CODE" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GRANULARITY_SAMPLE_TYPE_ID" Type="Byte" Nullable="false" />
+    <Property Name="SAMPLE_WEIGHT" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="GRANULARITY_WEIGHT_RANGE1" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="GRANULARITY_WEIGHT_RANGE2" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="GRANULARITY_RATION_RANGE1" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="GRANULARITY_RATION_RANGE2" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <NavigationProperty Name="OD_BASIC" Relationship="Self.FK_OD_GRANULARITY_OD_BASIC" FromRole="OD_DIEVIDER_GRANULARITY" ToRole="OD_BASIC" />
+  </EntityType>
+  <EntityType Name="OD_ELECTRIC_DIVIDING_MACHINE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OD_ID" Type="Int32" Nullable="false" />
+    <Property Name="SAMPLE_CODE" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="COAL_SOURCE" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="COAL_TYPE_ID" Type="Int32" Nullable="false" />
+    <Property Name="ENVIRONMENT_TEMPERATURE" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="ENVIRONMENT_HUMIDITY" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="MAXIMUM_GRANULARITY" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="PRECISION_SAMPLING_TYPE_ID" Type="Int32" Nullable="false" />
+    <Property Name="BIAS_SAMPLING_TYPE_ID" Type="Int32" Nullable="false" />
+    <Property Name="MT_PREPARATION_TYPE_ID" Type="Int32" Nullable="false" />
+    <Property Name="MT_TEST_TYPE_ID" Type="Int32" Nullable="false" />
+    <Property Name="SPLITTING_RATION" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="OD_BASIC" Relationship="Self.FK_OD_CRUSHING_DIVIDING_MACHINE_OD_BASIC" FromRole="OD_ELECTRIC_DIVIDING_MACHINE" ToRole="OD_BASIC" />
+  </EntityType>
+  <EntityType Name="OD_INTEGRATED_PREPARATION_MACHINE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OD_ID" Type="Int32" Nullable="false" />
+    <Property Name="SAMPLE_CODE" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ENVIRONMENT_TEMPERATURE" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="ENVIRONMENT_HUMIDITY" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="COAL_SOURCE" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="COAL_TYPE_ID" Type="Int32" Nullable="false" />
+    <Property Name="MAXIMUM_GRANULARITY" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="PRECISION_SAMPLING_TYPE_ID" Type="Int32" Nullable="false" />
+    <Property Name="BIAS_SAMPLING_TYPE_ID" Type="Int32" Nullable="false" />
+    <Property Name="MT_PREPARATION_TYPE_ID" Type="Int32" Nullable="false" />
+    <Property Name="MT_TEST_TYPE_ID" Type="Int32" Nullable="false" />
+    <Property Name="INPUT_WEIGHT_RANGE" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MT_OUTPUT_WEIGHT_RANGE" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MT_OUTPUT_GRANULARITY_RANGE" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SHARING_OUTPUT_WEIGHT_RANGE" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SHARING_OUTPUT_GRANULARITY_RANGE" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RESERVED_OUTPUT_WEIGHT_RANGE" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RESERVED_OUTPUT_GRANULARITY_RANGE" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GENERAL_OUTPUT_WEIGHT_RANGE" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GENERAL_OUTPUT_GRANULARITY_RANGE" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="WORKING_PACE_RANGE" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AVAILIABLE_MT_RANGE" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="OD_BASIC" Relationship="Self.FK_OD_INTEGRATED_PREPARATION_MACHINE_OD_BASIC" FromRole="OD_INTEGRATED_PREPARATION_MACHINE" ToRole="OD_BASIC" />
+  </EntityType>
+  <EntityType Name="OD_MILLER_GRANULARITY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OD_ID" Type="Int32" Nullable="false" />
+    <Property Name="SAMPLE_WEIGHT" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="MILLING_TIME" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="GRANULARITY_WEIGHT_RANGE1" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="GRANULARITY_WEIGHT_RANGE2" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="GRANULARITY_RATION_RANGE1" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="GRANULARITY_RATION_RANGE2" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <NavigationProperty Name="OD_BASIC" Relationship="Self.FK_OD_MILLER_GRANULARITY_OD_BASIC" FromRole="OD_MILLER_GRANULARITY" ToRole="OD_BASIC" />
+  </EntityType>
+  <EntityType Name="OD_MILLING_MACHINE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OD_ID" Type="Int32" Nullable="false" />
+    <Property Name="INPUT_WEIGHT" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="MAXIMUM_INPUT_GRANULARITY" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="OUTPUT_GRANULARITY_RANGE" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PRODUCTIVITY" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <NavigationProperty Name="OD_BASIC" Relationship="Self.FK_OD_MILLING_MACHINE_OD_BASIC" FromRole="OD_MILLING_MACHINE" ToRole="OD_BASIC" />
+  </EntityType>
+  <EntityType Name="OD_MT_LOSSES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OD_ID" Type="Int32" Nullable="false" />
+    <Property Name="MT_CODE" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PALLET_CODE" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CONTAINER_WEIGHT" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="SAMPLER_WEIGHT" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="DRY_WEIGHT" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="DRYING_CHECK1" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="DRYING_CHECK2" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="MT" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="REMARK" Type="String" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CREATOR_ID" Type="Int32" Nullable="false" />
+    <Property Name="CREATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="OD_BASIC" Relationship="Self.FK_OD_MT_LOSSES_OD_BASIC" FromRole="OD_MT_LOSSES" ToRole="OD_BASIC" />
+  </EntityType>
+  <EntityType Name="OD_PRECISION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OD_ID" Type="Int32" Nullable="false" />
+    <Property Name="PRECISION_CODE" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="WEIGHT" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="REMARK" Type="String" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CREATER_ID" Type="Int32" Nullable="false" />
+    <Property Name="CREATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="OD_BASIC" Relationship="Self.FK_OD_PRECISION_OD_BASIC" FromRole="OD_PRECISION" ToRole="OD_BASIC" />
+  </EntityType>
+  <EntityType Name="OD_RIFFLE_DEVIDING_MACHINE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OD_ID" Type="Int32" Nullable="false" />
+    <Property Name="SPLITTING_GRANULARITY" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="CELL_WIDTH" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="CELL_QUANTITY" Type="Int32" Nullable="false" />
+    <Property Name="SHAPE_SIZE" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="OD_BASIC" Relationship="Self.FK_OD_RIFFLE_DEVIDING_MACHINE_OD_BASIC" FromRole="OD_RIFFLE_DEVIDING_MACHINE" ToRole="OD_BASIC" />
+  </EntityType>
+  <EntityType Name="OD_SAMPLING_MACHINE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OD_ID" Type="Int32" Nullable="false" />
+    <Property Name="SAMPLE_CODE" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ENVIRONMENT_TEMPERATURE" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="ENVIRONMENT_HUMIDITY" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="COAL_SOURCE" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="COAL_TYPE_ID" Type="Int32" Nullable="false" />
+    <Property Name="MAXIMUM_GRANULARITY" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="PRECISION_SAMPLING_TYPE_ID" Type="Int32" Nullable="false" />
+    <Property Name="BIAS_SAMPLING_TYPE_ID" Type="Int32" Nullable="false" />
+    <Property Name="MT_PREPARATION_TYPE_ID" Type="Int32" Nullable="false" />
+    <Property Name="MT_TEST_TYPE_ID" Type="Int32" Nullable="false" />
+    <Property Name="INSTALLATION_POSITION" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SAMPLING_HEAD_TYPE" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SAMPLING_HEAD_SIZE" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="CRUSHER_TYPE" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CRUSHER_OUTPUT_GRANULARITY" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="DEVIDING_TYPE" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DEVIDING_HEAD_SIZE" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <NavigationProperty Name="OD_BASIC" Relationship="Self.FK_OD_SAMPLING_MACHINE_OD_BASIC" FromRole="OD_SAMPLING_MACHINE" ToRole="OD_BASIC" />
+  </EntityType>
+  <EntityType Name="OD_SPLITTING_RATION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OD_ID" Type="Int32" Nullable="false" />
+    <Property Name="SPLITTING_CODE" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SAMPLE_WEIGHT" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="RESERVE_WEIGHT_SAMPLE1" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="RESERVE_WEIGHT_SAMPLE2" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="RESERVE_RATION_SAMPLE1" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="RESERVE_RATION_SAMPLE2" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <NavigationProperty Name="OD_BASIC" Relationship="Self.FK_OD_SPLITTING_RATION_OD_BASIC" FromRole="OD_SPLITTING_RATION" ToRole="OD_BASIC" />
+  </EntityType>
+  <EntityType Name="OD_TEST_INSTRUMENT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OD_ID" Type="Int32" Nullable="false" />
+    <Property Name="INSTRUMENT_TYPE_ID" Type="Int32" Nullable="false" />
+    <Property Name="INSTRUMENT_DESCRIPTION" Type="String" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="OD_BASIC" Relationship="Self.FK_OD_TEST_INSTRUMENT_OD_BASIC" FromRole="OD_TEST_INSTRUMENT" ToRole="OD_BASIC" />
+  </EntityType>
+  <EntityType Name="OD_UNIFIED_PREPARATION_MACHINE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OD_ID" Type="Int32" Nullable="false" />
+    <Property Name="SAMPLE_CODE" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ENVIRONMENT_TEMPERATURE" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="ENVIRONMENT_HUMIDITY" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="COAL_SOURCE" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="COAL_TYPE_ID" Type="Int32" Nullable="false" />
+    <Property Name="MAXIMUM_GRANULARITY" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="PRECISION_SAMPLING_TYPE_ID" Type="Int32" Nullable="false" />
+    <Property Name="BIAS_SAMPLING_TYPE_ID" Type="Int32" Nullable="false" />
+    <Property Name="MT_PREPARATION_TYPE_ID" Type="Int32" Nullable="false" />
+    <Property Name="MT_TEST_TYPE_ID" Type="Int32" Nullable="false" />
+    <Property Name="OUT_PUT_GRANULARITY_STEP1" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="SPLITTING_RATION_STEP1" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OUT_PUT_GRANULARITY_STEP2" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="SPLITTING_RATION_STEP2" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="OD_BASIC" Relationship="Self.FK_UNIFIED_PREPARATION_MACHINE_OD_BASIC" FromRole="OD_UNIFIED_PREPARATION_MACHINE" ToRole="OD_BASIC" />
+  </EntityType>
+  <EntityType Name="OD_WEIGHT_LOSSES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OD_ID" Type="Int32" Nullable="false" />
+    <Property Name="WEIGHT_CODE" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="INPUT_WEIGHT" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="OUTPUT_WEIGHT" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="LOSS_WEIGHT" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="LOSS_RATION" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <NavigationProperty Name="OD_BASIC" Relationship="Self.FK_OD_WEIGHT_LOSSES_OD_WEIGHT_LOSSES" FromRole="OD_WEIGHT_LOSSES" ToRole="OD_BASIC" />
+  </EntityType>
+  <EntityType Name="UM_DEPARTMENT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FATHER_DEPARTMENT_ID" Type="Int32" Nullable="false" />
+    <Property Name="DEPARTMENT_LEADER_ID" Type="Int32" Nullable="false" />
+    <Property Name="DEPARTMENT_CODE" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DEPARTMENT_NAME" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DEAPRTMENT_SHORT_NAME" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DEPARTEMNT_DESCRIPTION" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DEPARTMENT_INDEX" Type="Int32" Nullable="false" />
+    <Property Name="OPERATOR_ID" Type="Int32" Nullable="false" />
+    <Property Name="CREATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UPDATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="UM_DEPARTMENT1" Relationship="Self.FK_UM_DEPARTMENT_UM_DEPARTMENT" FromRole="UM_DEPARTMENT" ToRole="UM_DEPARTMENT1" />
+    <NavigationProperty Name="UM_DEPARTMENT2" Relationship="Self.FK_UM_DEPARTMENT_UM_DEPARTMENT" FromRole="UM_DEPARTMENT1" ToRole="UM_DEPARTMENT" />
+    <NavigationProperty Name="UM_USERINFO" Relationship="ETPMSEntity.FK_UM_DEPARTMENT_UM_USERINFO" FromRole="UM_DEPARTMENT" ToRole="UM_USERINFO" />
+    <Property Name="IS_DELETED" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UM_MENU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FATHER_MENU_ID" Type="Int32" Nullable="false" />
+    <Property Name="MENU_CODE" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MENU_NAME" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MENU_INDEX" Type="Int32" Nullable="false" />
+    <Property Name="MENU_DESCRIPTION" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TRANSFER_URL" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IMG_URL" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IS_VISIBLE" Type="Boolean" Nullable="false" />
+    <Property Name="IS_DELETED" Type="Boolean" Nullable="false" />
+    <Property Name="REMARK" Type="String" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OPERATOR_ID" Type="Int32" Nullable="false" />
+    <Property Name="CREATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UPDATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="UM_MENU1" Relationship="Self.FK_UM_MENU_UM_MENU" FromRole="UM_MENU" ToRole="UM_MENU1" />
+    <NavigationProperty Name="UM_MENU2" Relationship="Self.FK_UM_MENU_UM_MENU" FromRole="UM_MENU1" ToRole="UM_MENU" />
+    <NavigationProperty Name="UM_ROLE_RELMENU" Relationship="Self.FK_UM_ROLE_RELMENU_UM_MENU" FromRole="UM_MENU" ToRole="UM_ROLE_RELMENU" />
+    <Property Name="CSS_CLASS" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="UM_ROLE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ROLE_CODE" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ROLE_NAME" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ROLE_DESCRIPTION" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ROLE_INDEX" Type="Int32" Nullable="false" />
+    <Property Name="IS_DELETED" Type="Boolean" Nullable="false" />
+    <Property Name="OPERATOR_ID" Type="Int32" Nullable="false" />
+    <Property Name="CREATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UPDATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="UM_ROLE_RELMENU" Relationship="Self.FK_UM_ROLE_RELMENU_UM_ROLE" FromRole="UM_ROLE" ToRole="UM_ROLE_RELMENU" />
+    <NavigationProperty Name="UM_USER_RELROLE" Relationship="Self.FK_UM_USER_RELROLE_UM_ROLE" FromRole="UM_ROLE" ToRole="UM_USER_RELROLE" />
+  </EntityType>
+  <EntityType Name="UM_ROLE_RELMENU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ROLE_ID" Type="Int32" Nullable="false" />
+    <Property Name="MENU_ID" Type="Int32" Nullable="false" />
+    <Property Name="CREATER_ID" Type="Int32" Nullable="false" />
+    <Property Name="CREATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="UM_MENU" Relationship="Self.FK_UM_ROLE_RELMENU_UM_MENU" FromRole="UM_ROLE_RELMENU" ToRole="UM_MENU" />
+    <NavigationProperty Name="UM_ROLE" Relationship="Self.FK_UM_ROLE_RELMENU_UM_ROLE" FromRole="UM_ROLE_RELMENU" ToRole="UM_ROLE" />
+  </EntityType>
+  <EntityType Name="UM_USER_RELROLE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USER_ID" Type="Int32" Nullable="false" />
+    <Property Name="ROLE_ID" Type="Int32" Nullable="false" />
+    <Property Name="CREATER_ID" Type="Int32" Nullable="false" />
+    <Property Name="CREATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="UM_ROLE" Relationship="Self.FK_UM_USER_RELROLE_UM_ROLE" FromRole="UM_USER_RELROLE" ToRole="UM_ROLE" />
+    <NavigationProperty Name="UM_USERINFO" Relationship="ETPMSEntity.FK_UM_USER_RELROLE_UM_USERINFO" FromRole="UM_USER_RELROLE" ToRole="UM_USERINFO" />
+  </EntityType>
+  <Association Name="FK_EP_CONTRACT_EP_CONTRACT">
+    <End Role="EP_POWER_PLANT" Type="Self.EP_POWER_PLANT" Multiplicity="1" />
+    <End Role="EP_CONTRACT" Type="Self.EP_CONTRACT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EP_POWER_PLANT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EP_CONTRACT">
+        <PropertyRef Name="PLANT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EP_TASK_EP_CONTRACT">
+    <End Role="EP_CONTRACT" Type="Self.EP_CONTRACT" Multiplicity="1" />
+    <End Role="EP_EQUIPMENT_TASK" Type="Self.EP_EQUIPMENT_TASK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EP_CONTRACT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EP_EQUIPMENT_TASK">
+        <PropertyRef Name="CONTRACT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EP_CONTRACT_RELEQUIPMENT_EP_EQUIPMENT_MENUFACTURER">
+    <End Role="EP_EQUIPMENT_MENUFACTURER" Type="Self.EP_EQUIPMENT_MENUFACTURER" Multiplicity="1" />
+    <End Role="EP_CONTRACT_RELEQUIPMENT" Type="Self.EP_CONTRACT_RELEQUIPMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EP_EQUIPMENT_MENUFACTURER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EP_CONTRACT_RELEQUIPMENT">
+        <PropertyRef Name="MENUFACTURER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OD_BASIC_EP_CONTRACT_RELEQUIPMENT">
+    <End Role="EP_CONTRACT_RELEQUIPMENT" Type="Self.EP_CONTRACT_RELEQUIPMENT" Multiplicity="1" />
+    <End Role="OD_BASIC" Type="Self.OD_BASIC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EP_CONTRACT_RELEQUIPMENT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OD_BASIC">
+        <PropertyRef Name="CONTRACT_RELEQUIPMENT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EP_DELEGATION_RELEXPRESS_EP_EXPERIMENT_DELEGATION">
+    <End Role="EP_DELEGATION" Type="Self.EP_DELEGATION" Multiplicity="1" />
+    <End Role="EP_DELEGATION_RELEXPRESS" Type="Self.EP_DELEGATION_RELEXPRESS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EP_DELEGATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EP_DELEGATION_RELEXPRESS">
+        <PropertyRef Name="DELEGATION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EP_DELEGATION_RELITEM_EP_EXPERIMENT_DELEGATION">
+    <End Role="EP_DELEGATION" Type="Self.EP_DELEGATION" Multiplicity="1" />
+    <End Role="EP_DELEGATION_RELITEM" Type="Self.EP_DELEGATION_RELITEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EP_DELEGATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EP_DELEGATION_RELITEM">
+        <PropertyRef Name="DELEGATION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EP_EXPERIMENT_DELEGATION_EP_TASK">
+    <End Role="EP_EQUIPMENT_TASK" Type="Self.EP_EQUIPMENT_TASK" Multiplicity="1" />
+    <End Role="EP_DELEGATION" Type="Self.EP_DELEGATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EP_EQUIPMENT_TASK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EP_DELEGATION">
+        <PropertyRef Name="TASK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EP_EXPERIMENT_DOCUMENT_EP_TASK">
+    <End Role="EP_EQUIPMENT_TASK" Type="Self.EP_EQUIPMENT_TASK" Multiplicity="1" />
+    <End Role="EP_EXPERIMENT_DOCUMENT" Type="Self.EP_EXPERIMENT_DOCUMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EP_EQUIPMENT_TASK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EP_EXPERIMENT_DOCUMENT">
+        <PropertyRef Name="TASK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OD_BIAS_OD_BASIC">
+    <End Role="OD_BASIC" Type="Self.OD_BASIC" Multiplicity="1" />
+    <End Role="OD_BIAS" Type="Self.OD_BIAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OD_BASIC">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OD_BIAS">
+        <PropertyRef Name="OD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OD_CRUSHER_GRANULARITY_OD_BASIC">
+    <End Role="OD_BASIC" Type="Self.OD_BASIC" Multiplicity="1" />
+    <End Role="OD_CRUSHER_GRANULARITY" Type="Self.OD_CRUSHER_GRANULARITY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OD_BASIC">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OD_CRUSHER_GRANULARITY">
+        <PropertyRef Name="OD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OD_CRUSHING_DIVIDING_MACHINE_OD_BASIC">
+    <End Role="OD_BASIC" Type="Self.OD_BASIC" Multiplicity="1" />
+    <End Role="OD_ELECTRIC_DIVIDING_MACHINE" Type="Self.OD_ELECTRIC_DIVIDING_MACHINE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OD_BASIC">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OD_ELECTRIC_DIVIDING_MACHINE">
+        <PropertyRef Name="OD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OD_CRUSHING_DIVIDING_MACHINE_OD_BASIC1">
+    <End Role="OD_BASIC" Type="Self.OD_BASIC" Multiplicity="1" />
+    <End Role="OD_CRUSHING_DIVIDING_MACHINE" Type="Self.OD_CRUSHING_DIVIDING_MACHINE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OD_BASIC">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OD_CRUSHING_DIVIDING_MACHINE">
+        <PropertyRef Name="OD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OD_CRUSHING_MACHINE_OD_BASIC">
+    <End Role="OD_BASIC" Type="Self.OD_BASIC" Multiplicity="1" />
+    <End Role="OD_CRUSHING_MACHINE" Type="Self.OD_CRUSHING_MACHINE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OD_BASIC">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OD_CRUSHING_MACHINE">
+        <PropertyRef Name="OD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OD_GRANULARITY_OD_BASIC">
+    <End Role="OD_BASIC" Type="Self.OD_BASIC" Multiplicity="1" />
+    <End Role="OD_DIEVIDER_GRANULARITY" Type="Self.OD_DIEVIDER_GRANULARITY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OD_BASIC">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OD_DIEVIDER_GRANULARITY">
+        <PropertyRef Name="OD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OD_INTEGRATED_PREPARATION_MACHINE_OD_BASIC">
+    <End Role="OD_BASIC" Type="Self.OD_BASIC" Multiplicity="1" />
+    <End Role="OD_INTEGRATED_PREPARATION_MACHINE" Type="Self.OD_INTEGRATED_PREPARATION_MACHINE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OD_BASIC">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OD_INTEGRATED_PREPARATION_MACHINE">
+        <PropertyRef Name="OD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OD_MILLER_GRANULARITY_OD_BASIC">
+    <End Role="OD_BASIC" Type="Self.OD_BASIC" Multiplicity="1" />
+    <End Role="OD_MILLER_GRANULARITY" Type="Self.OD_MILLER_GRANULARITY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OD_BASIC">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OD_MILLER_GRANULARITY">
+        <PropertyRef Name="OD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OD_MILLING_MACHINE_OD_BASIC">
+    <End Role="OD_BASIC" Type="Self.OD_BASIC" Multiplicity="1" />
+    <End Role="OD_MILLING_MACHINE" Type="Self.OD_MILLING_MACHINE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OD_BASIC">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OD_MILLING_MACHINE">
+        <PropertyRef Name="OD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OD_MT_LOSSES_OD_BASIC">
+    <End Role="OD_BASIC" Type="Self.OD_BASIC" Multiplicity="1" />
+    <End Role="OD_MT_LOSSES" Type="Self.OD_MT_LOSSES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OD_BASIC">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OD_MT_LOSSES">
+        <PropertyRef Name="OD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OD_PRECISION_OD_BASIC">
+    <End Role="OD_BASIC" Type="Self.OD_BASIC" Multiplicity="1" />
+    <End Role="OD_PRECISION" Type="Self.OD_PRECISION" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="OD_BASIC">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OD_PRECISION">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OD_RIFFLE_DEVIDING_MACHINE_OD_BASIC">
+    <End Role="OD_BASIC" Type="Self.OD_BASIC" Multiplicity="1" />
+    <End Role="OD_RIFFLE_DEVIDING_MACHINE" Type="Self.OD_RIFFLE_DEVIDING_MACHINE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OD_BASIC">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OD_RIFFLE_DEVIDING_MACHINE">
+        <PropertyRef Name="OD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OD_SAMPLING_MACHINE_OD_BASIC">
+    <End Role="OD_BASIC" Type="Self.OD_BASIC" Multiplicity="1" />
+    <End Role="OD_SAMPLING_MACHINE" Type="Self.OD_SAMPLING_MACHINE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OD_BASIC">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OD_SAMPLING_MACHINE">
+        <PropertyRef Name="OD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OD_SPLITTING_RATION_OD_BASIC">
+    <End Role="OD_BASIC" Type="Self.OD_BASIC" Multiplicity="1" />
+    <End Role="OD_SPLITTING_RATION" Type="Self.OD_SPLITTING_RATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OD_BASIC">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OD_SPLITTING_RATION">
+        <PropertyRef Name="OD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OD_TEST_INSTRUMENT_OD_BASIC">
+    <End Role="OD_BASIC" Type="Self.OD_BASIC" Multiplicity="1" />
+    <End Role="OD_TEST_INSTRUMENT" Type="Self.OD_TEST_INSTRUMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OD_BASIC">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OD_TEST_INSTRUMENT">
+        <PropertyRef Name="OD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OD_WEIGHT_LOSSES_OD_WEIGHT_LOSSES">
+    <End Role="OD_BASIC" Type="Self.OD_BASIC" Multiplicity="1" />
+    <End Role="OD_WEIGHT_LOSSES" Type="Self.OD_WEIGHT_LOSSES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OD_BASIC">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OD_WEIGHT_LOSSES">
+        <PropertyRef Name="OD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UNIFIED_PREPARATION_MACHINE_OD_BASIC">
+    <End Role="OD_BASIC" Type="Self.OD_BASIC" Multiplicity="1" />
+    <End Role="OD_UNIFIED_PREPARATION_MACHINE" Type="Self.OD_UNIFIED_PREPARATION_MACHINE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OD_BASIC">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OD_UNIFIED_PREPARATION_MACHINE">
+        <PropertyRef Name="OD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UM_DEPARTMENT_UM_DEPARTMENT">
+    <End Role="UM_DEPARTMENT" Type="Self.UM_DEPARTMENT" Multiplicity="1" />
+    <End Role="UM_DEPARTMENT1" Type="Self.UM_DEPARTMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UM_DEPARTMENT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UM_DEPARTMENT1">
+        <PropertyRef Name="DEPARTMENT_LEADER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UM_MENU_UM_MENU">
+    <End Role="UM_MENU" Type="Self.UM_MENU" Multiplicity="1" />
+    <End Role="UM_MENU1" Type="Self.UM_MENU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UM_MENU">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UM_MENU1">
+        <PropertyRef Name="FATHER_MENU_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UM_ROLE_RELMENU_UM_MENU">
+    <End Role="UM_MENU" Type="Self.UM_MENU" Multiplicity="1" />
+    <End Role="UM_ROLE_RELMENU" Type="Self.UM_ROLE_RELMENU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UM_MENU">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UM_ROLE_RELMENU">
+        <PropertyRef Name="MENU_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UM_ROLE_RELMENU_UM_ROLE">
+    <End Role="UM_ROLE" Type="Self.UM_ROLE" Multiplicity="1" />
+    <End Role="UM_ROLE_RELMENU" Type="Self.UM_ROLE_RELMENU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UM_ROLE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UM_ROLE_RELMENU">
+        <PropertyRef Name="ROLE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UM_USER_RELROLE_UM_ROLE">
+    <End Role="UM_ROLE" Type="Self.UM_ROLE" Multiplicity="1" />
+    <End Role="UM_USER_RELROLE" Type="Self.UM_USER_RELROLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UM_ROLE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UM_USER_RELROLE">
+        <PropertyRef Name="ROLE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ETPMSDbContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BD_CONFIG" EntityType="Self.BD_CONFIG" />
+    <EntitySet Name="EP_CONTRACT" EntityType="Self.EP_CONTRACT" />
+    <EntitySet Name="EP_CONTRACT_RELEQUIPMENT" EntityType="Self.EP_CONTRACT_RELEQUIPMENT" />
+    <EntitySet Name="EP_DELEGATION" EntityType="Self.EP_DELEGATION" />
+    <EntitySet Name="EP_DELEGATION_RELEXPRESS" EntityType="Self.EP_DELEGATION_RELEXPRESS" />
+    <EntitySet Name="EP_DELEGATION_RELITEM" EntityType="Self.EP_DELEGATION_RELITEM" />
+    <EntitySet Name="EP_DOCUMENT" EntityType="Self.EP_DOCUMENT" />
+    <EntitySet Name="EP_EQUIPMENT_MENUFACTURER" EntityType="Self.EP_EQUIPMENT_MENUFACTURER" />
+    <EntitySet Name="EP_EQUIPMENT_TASK" EntityType="Self.EP_EQUIPMENT_TASK" />
+    <EntitySet Name="EP_EXPERIMENT_DOCUMENT" EntityType="Self.EP_EXPERIMENT_DOCUMENT" />
+    <EntitySet Name="EP_POWER_PLANT" EntityType="Self.EP_POWER_PLANT" />
+    <EntitySet Name="OD_BASIC" EntityType="Self.OD_BASIC" />
+    <EntitySet Name="OD_BIAS" EntityType="Self.OD_BIAS" />
+    <EntitySet Name="OD_CRUSHER_GRANULARITY" EntityType="Self.OD_CRUSHER_GRANULARITY" />
+    <EntitySet Name="OD_CRUSHING_DIVIDING_MACHINE" EntityType="Self.OD_CRUSHING_DIVIDING_MACHINE" />
+    <EntitySet Name="OD_CRUSHING_MACHINE" EntityType="Self.OD_CRUSHING_MACHINE" />
+    <EntitySet Name="OD_DIEVIDER_GRANULARITY" EntityType="Self.OD_DIEVIDER_GRANULARITY" />
+    <EntitySet Name="OD_ELECTRIC_DIVIDING_MACHINE" EntityType="Self.OD_ELECTRIC_DIVIDING_MACHINE" />
+    <EntitySet Name="OD_INTEGRATED_PREPARATION_MACHINE" EntityType="Self.OD_INTEGRATED_PREPARATION_MACHINE" />
+    <EntitySet Name="OD_MILLER_GRANULARITY" EntityType="Self.OD_MILLER_GRANULARITY" />
+    <EntitySet Name="OD_MILLING_MACHINE" EntityType="Self.OD_MILLING_MACHINE" />
+    <EntitySet Name="OD_MT_LOSSES" EntityType="Self.OD_MT_LOSSES" />
+    <EntitySet Name="OD_PRECISION" EntityType="Self.OD_PRECISION" />
+    <EntitySet Name="OD_RIFFLE_DEVIDING_MACHINE" EntityType="Self.OD_RIFFLE_DEVIDING_MACHINE" />
+    <EntitySet Name="OD_SAMPLING_MACHINE" EntityType="Self.OD_SAMPLING_MACHINE" />
+    <EntitySet Name="OD_SPLITTING_RATION" EntityType="Self.OD_SPLITTING_RATION" />
+    <EntitySet Name="OD_TEST_INSTRUMENT" EntityType="Self.OD_TEST_INSTRUMENT" />
+    <EntitySet Name="OD_UNIFIED_PREPARATION_MACHINE" EntityType="Self.OD_UNIFIED_PREPARATION_MACHINE" />
+    <EntitySet Name="OD_WEIGHT_LOSSES" EntityType="Self.OD_WEIGHT_LOSSES" />
+    <EntitySet Name="UM_DEPARTMENT" EntityType="Self.UM_DEPARTMENT" />
+    <EntitySet Name="UM_MENU" EntityType="Self.UM_MENU" />
+    <EntitySet Name="UM_ROLE" EntityType="Self.UM_ROLE" />
+    <EntitySet Name="UM_ROLE_RELMENU" EntityType="Self.UM_ROLE_RELMENU" />
+    <EntitySet Name="UM_USER_RELROLE" EntityType="Self.UM_USER_RELROLE" />
+    <AssociationSet Name="FK_EP_CONTRACT_EP_CONTRACT" Association="Self.FK_EP_CONTRACT_EP_CONTRACT">
+      <End Role="EP_POWER_PLANT" EntitySet="EP_POWER_PLANT" />
+      <End Role="EP_CONTRACT" EntitySet="EP_CONTRACT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EP_TASK_EP_CONTRACT" Association="Self.FK_EP_TASK_EP_CONTRACT">
+      <End Role="EP_CONTRACT" EntitySet="EP_CONTRACT" />
+      <End Role="EP_EQUIPMENT_TASK" EntitySet="EP_EQUIPMENT_TASK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EP_CONTRACT_RELEQUIPMENT_EP_EQUIPMENT_MENUFACTURER" Association="Self.FK_EP_CONTRACT_RELEQUIPMENT_EP_EQUIPMENT_MENUFACTURER">
+      <End Role="EP_EQUIPMENT_MENUFACTURER" EntitySet="EP_EQUIPMENT_MENUFACTURER" />
+      <End Role="EP_CONTRACT_RELEQUIPMENT" EntitySet="EP_CONTRACT_RELEQUIPMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OD_BASIC_EP_CONTRACT_RELEQUIPMENT" Association="Self.FK_OD_BASIC_EP_CONTRACT_RELEQUIPMENT">
+      <End Role="EP_CONTRACT_RELEQUIPMENT" EntitySet="EP_CONTRACT_RELEQUIPMENT" />
+      <End Role="OD_BASIC" EntitySet="OD_BASIC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EP_DELEGATION_RELEXPRESS_EP_EXPERIMENT_DELEGATION" Association="Self.FK_EP_DELEGATION_RELEXPRESS_EP_EXPERIMENT_DELEGATION">
+      <End Role="EP_DELEGATION" EntitySet="EP_DELEGATION" />
+      <End Role="EP_DELEGATION_RELEXPRESS" EntitySet="EP_DELEGATION_RELEXPRESS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EP_DELEGATION_RELITEM_EP_EXPERIMENT_DELEGATION" Association="Self.FK_EP_DELEGATION_RELITEM_EP_EXPERIMENT_DELEGATION">
+      <End Role="EP_DELEGATION" EntitySet="EP_DELEGATION" />
+      <End Role="EP_DELEGATION_RELITEM" EntitySet="EP_DELEGATION_RELITEM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EP_EXPERIMENT_DELEGATION_EP_TASK" Association="Self.FK_EP_EXPERIMENT_DELEGATION_EP_TASK">
+      <End Role="EP_EQUIPMENT_TASK" EntitySet="EP_EQUIPMENT_TASK" />
+      <End Role="EP_DELEGATION" EntitySet="EP_DELEGATION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EP_EXPERIMENT_DOCUMENT_EP_TASK" Association="Self.FK_EP_EXPERIMENT_DOCUMENT_EP_TASK">
+      <End Role="EP_EQUIPMENT_TASK" EntitySet="EP_EQUIPMENT_TASK" />
+      <End Role="EP_EXPERIMENT_DOCUMENT" EntitySet="EP_EXPERIMENT_DOCUMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OD_BIAS_OD_BASIC" Association="Self.FK_OD_BIAS_OD_BASIC">
+      <End Role="OD_BASIC" EntitySet="OD_BASIC" />
+      <End Role="OD_BIAS" EntitySet="OD_BIAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OD_CRUSHER_GRANULARITY_OD_BASIC" Association="Self.FK_OD_CRUSHER_GRANULARITY_OD_BASIC">
+      <End Role="OD_BASIC" EntitySet="OD_BASIC" />
+      <End Role="OD_CRUSHER_GRANULARITY" EntitySet="OD_CRUSHER_GRANULARITY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OD_CRUSHING_DIVIDING_MACHINE_OD_BASIC" Association="Self.FK_OD_CRUSHING_DIVIDING_MACHINE_OD_BASIC">
+      <End Role="OD_BASIC" EntitySet="OD_BASIC" />
+      <End Role="OD_ELECTRIC_DIVIDING_MACHINE" EntitySet="OD_ELECTRIC_DIVIDING_MACHINE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OD_CRUSHING_DIVIDING_MACHINE_OD_BASIC1" Association="Self.FK_OD_CRUSHING_DIVIDING_MACHINE_OD_BASIC1">
+      <End Role="OD_BASIC" EntitySet="OD_BASIC" />
+      <End Role="OD_CRUSHING_DIVIDING_MACHINE" EntitySet="OD_CRUSHING_DIVIDING_MACHINE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OD_CRUSHING_MACHINE_OD_BASIC" Association="Self.FK_OD_CRUSHING_MACHINE_OD_BASIC">
+      <End Role="OD_BASIC" EntitySet="OD_BASIC" />
+      <End Role="OD_CRUSHING_MACHINE" EntitySet="OD_CRUSHING_MACHINE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OD_GRANULARITY_OD_BASIC" Association="Self.FK_OD_GRANULARITY_OD_BASIC">
+      <End Role="OD_BASIC" EntitySet="OD_BASIC" />
+      <End Role="OD_DIEVIDER_GRANULARITY" EntitySet="OD_DIEVIDER_GRANULARITY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OD_INTEGRATED_PREPARATION_MACHINE_OD_BASIC" Association="Self.FK_OD_INTEGRATED_PREPARATION_MACHINE_OD_BASIC">
+      <End Role="OD_BASIC" EntitySet="OD_BASIC" />
+      <End Role="OD_INTEGRATED_PREPARATION_MACHINE" EntitySet="OD_INTEGRATED_PREPARATION_MACHINE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OD_MILLER_GRANULARITY_OD_BASIC" Association="Self.FK_OD_MILLER_GRANULARITY_OD_BASIC">
+      <End Role="OD_BASIC" EntitySet="OD_BASIC" />
+      <End Role="OD_MILLER_GRANULARITY" EntitySet="OD_MILLER_GRANULARITY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OD_MILLING_MACHINE_OD_BASIC" Association="Self.FK_OD_MILLING_MACHINE_OD_BASIC">
+      <End Role="OD_BASIC" EntitySet="OD_BASIC" />
+      <End Role="OD_MILLING_MACHINE" EntitySet="OD_MILLING_MACHINE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OD_MT_LOSSES_OD_BASIC" Association="Self.FK_OD_MT_LOSSES_OD_BASIC">
+      <End Role="OD_BASIC" EntitySet="OD_BASIC" />
+      <End Role="OD_MT_LOSSES" EntitySet="OD_MT_LOSSES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OD_PRECISION_OD_BASIC" Association="Self.FK_OD_PRECISION_OD_BASIC">
+      <End Role="OD_BASIC" EntitySet="OD_BASIC" />
+      <End Role="OD_PRECISION" EntitySet="OD_PRECISION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OD_RIFFLE_DEVIDING_MACHINE_OD_BASIC" Association="Self.FK_OD_RIFFLE_DEVIDING_MACHINE_OD_BASIC">
+      <End Role="OD_BASIC" EntitySet="OD_BASIC" />
+      <End Role="OD_RIFFLE_DEVIDING_MACHINE" EntitySet="OD_RIFFLE_DEVIDING_MACHINE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OD_SAMPLING_MACHINE_OD_BASIC" Association="Self.FK_OD_SAMPLING_MACHINE_OD_BASIC">
+      <End Role="OD_BASIC" EntitySet="OD_BASIC" />
+      <End Role="OD_SAMPLING_MACHINE" EntitySet="OD_SAMPLING_MACHINE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OD_SPLITTING_RATION_OD_BASIC" Association="Self.FK_OD_SPLITTING_RATION_OD_BASIC">
+      <End Role="OD_BASIC" EntitySet="OD_BASIC" />
+      <End Role="OD_SPLITTING_RATION" EntitySet="OD_SPLITTING_RATION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OD_TEST_INSTRUMENT_OD_BASIC" Association="Self.FK_OD_TEST_INSTRUMENT_OD_BASIC">
+      <End Role="OD_BASIC" EntitySet="OD_BASIC" />
+      <End Role="OD_TEST_INSTRUMENT" EntitySet="OD_TEST_INSTRUMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OD_WEIGHT_LOSSES_OD_WEIGHT_LOSSES" Association="Self.FK_OD_WEIGHT_LOSSES_OD_WEIGHT_LOSSES">
+      <End Role="OD_BASIC" EntitySet="OD_BASIC" />
+      <End Role="OD_WEIGHT_LOSSES" EntitySet="OD_WEIGHT_LOSSES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UNIFIED_PREPARATION_MACHINE_OD_BASIC" Association="Self.FK_UNIFIED_PREPARATION_MACHINE_OD_BASIC">
+      <End Role="OD_BASIC" EntitySet="OD_BASIC" />
+      <End Role="OD_UNIFIED_PREPARATION_MACHINE" EntitySet="OD_UNIFIED_PREPARATION_MACHINE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UM_DEPARTMENT_UM_DEPARTMENT" Association="Self.FK_UM_DEPARTMENT_UM_DEPARTMENT">
+      <End Role="UM_DEPARTMENT" EntitySet="UM_DEPARTMENT" />
+      <End Role="UM_DEPARTMENT1" EntitySet="UM_DEPARTMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UM_MENU_UM_MENU" Association="Self.FK_UM_MENU_UM_MENU">
+      <End Role="UM_MENU" EntitySet="UM_MENU" />
+      <End Role="UM_MENU1" EntitySet="UM_MENU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UM_ROLE_RELMENU_UM_MENU" Association="Self.FK_UM_ROLE_RELMENU_UM_MENU">
+      <End Role="UM_MENU" EntitySet="UM_MENU" />
+      <End Role="UM_ROLE_RELMENU" EntitySet="UM_ROLE_RELMENU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UM_ROLE_RELMENU_UM_ROLE" Association="Self.FK_UM_ROLE_RELMENU_UM_ROLE">
+      <End Role="UM_ROLE" EntitySet="UM_ROLE" />
+      <End Role="UM_ROLE_RELMENU" EntitySet="UM_ROLE_RELMENU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UM_USER_RELROLE_UM_ROLE" Association="Self.FK_UM_USER_RELROLE_UM_ROLE">
+      <End Role="UM_ROLE" EntitySet="UM_ROLE" />
+      <End Role="UM_USER_RELROLE" EntitySet="UM_USER_RELROLE" />
+    </AssociationSet>
+    <EntitySet Name="UM_USERINFO" EntityType="ETPMSEntity.UM_USERINFO" />
+    <AssociationSet Name="FK_EP_TASK_UM_USERINFO" Association="ETPMSEntity.FK_EP_TASK_UM_USERINFO">
+      <End Role="UM_USERINFO" EntitySet="UM_USERINFO" />
+      <End Role="EP_EQUIPMENT_TASK" EntitySet="EP_EQUIPMENT_TASK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EP_TASK_UM_USERINFO1" Association="ETPMSEntity.FK_EP_TASK_UM_USERINFO1">
+      <End Role="UM_USERINFO" EntitySet="UM_USERINFO" />
+      <End Role="EP_EQUIPMENT_TASK" EntitySet="EP_EQUIPMENT_TASK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EP_EXPERIMENT_DOCUMENT_UM_USERINFO" Association="ETPMSEntity.FK_EP_EXPERIMENT_DOCUMENT_UM_USERINFO">
+      <End Role="UM_USERINFO" EntitySet="UM_USERINFO" />
+      <End Role="EP_EXPERIMENT_DOCUMENT" EntitySet="EP_EXPERIMENT_DOCUMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UM_DEPARTMENT_UM_USERINFO" Association="ETPMSEntity.FK_UM_DEPARTMENT_UM_USERINFO">
+      <End Role="UM_USERINFO" EntitySet="UM_USERINFO" />
+      <End Role="UM_DEPARTMENT" EntitySet="UM_DEPARTMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UM_USER_RELROLE_UM_USERINFO" Association="ETPMSEntity.FK_UM_USER_RELROLE_UM_USERINFO">
+      <End Role="UM_USERINFO" EntitySet="UM_USERINFO" />
+      <End Role="UM_USER_RELROLE" EntitySet="UM_USER_RELROLE" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="UM_USERINFO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USER_CODE" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NAME" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="PASSWORD" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="LAST_LOGIN_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DEPARTMENT_ID" Type="Int32" Nullable="false" />
+    <Property Name="TELEPHONE" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="SEX" Type="Byte" Nullable="false" />
+    <Property Name="USER_STATUS" Type="Byte" Nullable="false" />
+    <Property Name="IS_DELETED" Type="Boolean" Nullable="false" />
+    <Property Name="OPERATOR_ID" Type="Int32" Nullable="false" />
+    <Property Name="CREATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UPDATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="EP_EQUIPMENT_TASK" Relationship="ETPMSEntity.FK_EP_TASK_UM_USERINFO" FromRole="UM_USERINFO" ToRole="EP_EQUIPMENT_TASK" />
+    <NavigationProperty Name="EP_EQUIPMENT_TASK1" Relationship="ETPMSEntity.FK_EP_TASK_UM_USERINFO1" FromRole="UM_USERINFO" ToRole="EP_EQUIPMENT_TASK" />
+    <NavigationProperty Name="EP_EXPERIMENT_DOCUMENT" Relationship="ETPMSEntity.FK_EP_EXPERIMENT_DOCUMENT_UM_USERINFO" FromRole="UM_USERINFO" ToRole="EP_EXPERIMENT_DOCUMENT" />
+    <NavigationProperty Name="UM_DEPARTMENT" Relationship="ETPMSEntity.FK_UM_DEPARTMENT_UM_USERINFO" FromRole="UM_USERINFO" ToRole="UM_DEPARTMENT" />
+    <NavigationProperty Name="UM_USER_RELROLE" Relationship="ETPMSEntity.FK_UM_USER_RELROLE_UM_USERINFO" FromRole="UM_USERINFO" ToRole="UM_USER_RELROLE" />
+  </EntityType>
+  <Association Name="FK_EP_TASK_UM_USERINFO">
+    <End Type="ETPMSEntity.UM_USERINFO" Role="UM_USERINFO" Multiplicity="1" />
+    <End Type="ETPMSEntity.EP_EQUIPMENT_TASK" Role="EP_EQUIPMENT_TASK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UM_USERINFO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EP_EQUIPMENT_TASK">
+        <PropertyRef Name="TASK_LEADER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EP_TASK_UM_USERINFO1">
+    <End Type="ETPMSEntity.UM_USERINFO" Role="UM_USERINFO" Multiplicity="1" />
+    <End Type="ETPMSEntity.EP_EQUIPMENT_TASK" Role="EP_EQUIPMENT_TASK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UM_USERINFO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EP_EQUIPMENT_TASK">
+        <PropertyRef Name="APPROVER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EP_EXPERIMENT_DOCUMENT_UM_USERINFO">
+    <End Type="ETPMSEntity.UM_USERINFO" Role="UM_USERINFO" Multiplicity="1" />
+    <End Type="ETPMSEntity.EP_EXPERIMENT_DOCUMENT" Role="EP_EXPERIMENT_DOCUMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UM_USERINFO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EP_EXPERIMENT_DOCUMENT">
+        <PropertyRef Name="APPROVER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UM_DEPARTMENT_UM_USERINFO">
+    <End Type="ETPMSEntity.UM_USERINFO" Role="UM_USERINFO" Multiplicity="1" />
+    <End Type="ETPMSEntity.UM_DEPARTMENT" Role="UM_DEPARTMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UM_USERINFO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UM_DEPARTMENT">
+        <PropertyRef Name="DEPARTMENT_LEADER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UM_USER_RELROLE_UM_USERINFO">
+    <End Type="ETPMSEntity.UM_USERINFO" Role="UM_USERINFO" Multiplicity="1" />
+    <End Type="ETPMSEntity.UM_USER_RELROLE" Role="UM_USER_RELROLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UM_USERINFO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UM_USER_RELROLE">
+        <PropertyRef Name="USER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

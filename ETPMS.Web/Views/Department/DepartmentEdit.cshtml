@@ -1,0 +1,129 @@
+﻿@model ETPMS.Application.DTOs.DepartmentDto
+
+<div id="departmentEdit">
+    <style type="text/css">
+        #departmentEdit .primary {
+            color: red;
+            line-height: 24px;
+            vertical-align: middle;
+            padding-left: 4px;
+        }
+
+        #departmentEdit input {
+            margin-left: 12px;
+        }
+
+        #departmentEdit .k-input {
+            height: 2em;
+            line-height: 2em;
+            vertical-align: middle;
+        }
+    </style>
+    <div id="top-toolbar" class="pf-toolbar-noborder"></div>
+    <form id="formEdit">
+        @Html.HiddenFor(model => model.ID)
+        @Html.HiddenFor(model => model.FATHER_DEPARTMENT_ID)
+        <input type="hidden" id="hidUsers" value="@ViewBag.AllUsers " />
+        <ul class="pf-fieldlist">
+            <li><label>上级部门</label><span style="margin-left:14px;" >@ViewBag.ParentDepartmentName</span></li>
+            <li>
+                @Html.LabelFor(model => model.DEPARTMENT_CODE, " 部门编码")
+                @Html.TextBoxFor(model => model.DEPARTMENT_CODE, new { @class = "k-textbox", @placeholder = "部门编码...", @readonly = "readonly" })<span class="primary">*</span>
+            </li>
+            <li>
+                @Html.LabelFor(model => model.DEPARTMENT_NAME, " 部门名称")
+                @Html.TextBoxFor(model => model.DEPARTMENT_NAME, new { @class = "k-textbox", @placeholder = "部门名称..." })<span class="primary">*</span>
+            </li>
+            <li>
+                @Html.LabelFor(model => model.DEPARTMENT_LEADER_ID, "部门负责人")
+                <select id="DEPARTMENT_LEADER_ID" name="DEPARTMENT_LEADER_ID" class="k-select" style="width:23.25em;"></select><span class="primary">*</span>
+            </li>
+            <li>
+                @Html.LabelFor(model => model.DEAPRTMENT_SHORT_NAME, " 部门简称")
+                @Html.TextBoxFor(model => model.DEAPRTMENT_SHORT_NAME, new { @class = "k-textbox", @placeholder = "部门简称..." })
+            </li>
+            <li>
+                @Html.LabelFor(model => model.DEPARTMENT_INDEX, " 排序索引")
+                @Html.TextBoxFor(model => model.DEPARTMENT_INDEX, new { @class = "k-textbox", @placeholder = "排序索引..." })
+            </li>
+            <li>
+                @Html.LabelFor(model => model.DEPARTEMNT_DESCRIPTION, " 部门描述")
+                @Html.TextBoxFor(model => model.DEPARTEMNT_DESCRIPTION, new { @class = "k-textbox", @placeholder = "部门描述...", @style = "min-height:32px;min-width:586px;" })
+            </li>
+            <li><button class="k-button k-primary " style="width:64px;margin-left:578px;" id="btnSave">更新</button></li>
+        </ul>
+    </form>
+    <script type="text/javascript">
+        var $departmentEditContainer = $("#departmentEdit");
+        var $formEditContainer = $departmentEditContainer.find("#formEdit");
+        var users = JSON.parse($departmentEditContainer.find("#hidUsers").val());
+        users.unshift({ text: "请选择", value: 0 });
+        $(document).ready(function () {
+            $departmentEditContainer.find("#top-toolbar").kendoToolBar({
+                items: [
+                    { type: "button", text: "删除", icon: "cancel" ,click:function(){
+                        var departmentId  =  @Model.ID;
+                        $.post("@Url.Action("DeleteDepartment", "Department")",{departmentId}, function (response) {
+                            if (response.ResultType === 1) {
+                                $notification.showSuccess(response.Message);
+                                departmentDataSource.read();//刷新左侧部门树
+                                $departmentSplitter.ajaxRequest(".k-pane:last",//载入空页面
+                                    "@Url.Action("Empty","Home")",
+                                    { });
+                            } else {
+                                $notification.showError(response.Message);
+                            }
+                        });
+                    }},
+                    {
+                        type: "button", text: "新增子部门", icon: "plus",
+                        click: function () {
+                            var parentDepartmentId= @Model.ID;
+                            var parentDepartmentName = "@Model.DEPARTMENT_NAME";
+                            //点击节点后,载入新增页面
+                            $departmentSplitter.ajaxRequest(".k-pane:last",
+                                "@Url.Action("DepartmentAdd", "Department")",
+                                { parentDepartmentId: parentDepartmentId, parentDepartmentName: parentDepartmentName });
+                        }
+                    }
+                ]
+            }).data("kendoToolBar");
+            $formEditContainer.find("#DEPARTMENT_LEADER_ID").kendoDropDownList({
+                index: 0,
+                dataSource: users,
+                dataTextField: "text",
+                dataValueField: "value"
+            }).data("kendoDropDownList").value(@Model.DEPARTMENT_LEADER_ID);
+            $formEditContainer.find("#btnSave").on("click", function () {
+                if ($formEditContainer.find("#DEPARTMENT_LEADER_ID").val() === '0') {
+                    $notification.showInfo("请明确部门负责人~");
+                } else if (isNaN(parseInt($formEditContainer.find("#DEPARTMENT_INDEX").val()))) {
+                    $notification.showInfo("排序索引必须是数字~");
+                } else {
+                    $.ajax({
+                        type: "post",
+                        dataType: "json",
+                        url: "Department/UpdateDepartment",
+                        data: $formEditContainer.serializeArray(),
+                        success: function (response) {
+                            if (response) {
+                                if (response.ResultType === 1) {
+                                    $notification.showSuccess(response.Message);
+                                    departmentDataSource.read();//刷新左侧部门树
+                                } else {
+                                    $notification.showError(response.Message);
+                                }
+                            } else {
+                                $notification.showError("系统异常，提交更新失败~");
+                            }
+                        },
+                        error: function () {
+                            $notification.showError("系统异常，提交更新失败，请刷新后再试~");
+                        }
+                    });
+                }
+                return false;
+            });
+        });
+    </script>
+</div>

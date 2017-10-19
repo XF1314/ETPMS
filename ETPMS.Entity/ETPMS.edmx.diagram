@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="43aa3ef96e0140dca78b3c67e18b6e18" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="ETPMSEntity.BD_CONFIG" Width="1.5" PointX="2.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETPMSEntity.EP_CONTRACT" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETPMSEntity.EP_CONTRACT_RELEQUIPMENT" Width="1.5" PointX="3" PointY="38.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETPMSEntity.EP_DELEGATION" Width="1.5" PointX="14.25" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETPMSEntity.EP_DELEGATION_RELEXPRESS" Width="1.5" PointX="16.5" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETPMSEntity.EP_DELEGATION_RELITEM" Width="1.5" PointX="16.5" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETPMSEntity.EP_DOCUMENT" Width="1.5" PointX="4.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETPMSEntity.EP_EQUIPMENT_MENUFACTURER" Width="1.5" PointX="0.75" PointY="38.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETPMSEntity.EP_EQUIPMENT_TASK" Width="1.5" PointX="12" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETPMSEntity.EP_EXPERIMENT_DOCUMENT" Width="1.5" PointX="17.25" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETPMSEntity.EP_POWER_PLANT" Width="1.5" PointX="7.5" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETPMSEntity.OD_BASIC" Width="1.5" PointX="5.25" PointY="36.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETPMSEntity.OD_BIAS" Width="1.5" PointX="7.5" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETPMSEntity.OD_CRUSHER_GRANULARITY" Width="1.5" PointX="7.5" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETPMSEntity.OD_CRUSHING_DIVIDING_MACHINE" Width="1.5" PointX="7.5" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETPMSEntity.OD_CRUSHING_MACHINE" Width="1.5" PointX="7.5" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETPMSEntity.OD_DIEVIDER_GRANULARITY" Width="1.5" PointX="7.5" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETPMSEntity.OD_ELECTRIC_DIVIDING_MACHINE" Width="1.5" PointX="7.5" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETPMSEntity.OD_INTEGRATED_PREPARATION_MACHINE" Width="1.5" PointX="7.5" PointY="30.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETPMSEntity.OD_MILLER_GRANULARITY" Width="1.5" PointX="7.5" PointY="36.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETPMSEntity.OD_MILLING_MACHINE" Width="1.5" PointX="7.5" PointY="40" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETPMSEntity.OD_MT_LOSSES" Width="1.5" PointX="7.5" PointY="43.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETPMSEntity.OD_PRECISION" Width="1.5" PointX="7.5" PointY="47.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETPMSEntity.OD_RIFFLE_DEVIDING_MACHINE" Width="1.5" PointX="7.5" PointY="50.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETPMSEntity.OD_SAMPLING_MACHINE" Width="1.5" PointX="7.5" PointY="53.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETPMSEntity.OD_SPLITTING_RATION" Width="1.5" PointX="7.5" PointY="59.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETPMSEntity.OD_TEST_INSTRUMENT" Width="1.5" PointX="7.5" PointY="63" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETPMSEntity.OD_UNIFIED_PREPARATION_MACHINE" Width="1.5" PointX="7.5" PointY="65.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETPMSEntity.OD_WEIGHT_LOSSES" Width="1.5" PointX="7.5" PointY="70.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETPMSEntity.UM_DEPARTMENT" Width="1.5" PointX="12" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETPMSEntity.UM_MENU" Width="1.5" PointX="17.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETPMSEntity.UM_ROLE" Width="1.5" PointX="12.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETPMSEntity.UM_ROLE_RELMENU" Width="1.5" PointX="15" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETPMSEntity.UM_USER_RELROLE" Width="1.5" PointX="15" PointY="13" IsExpanded="true" />
+        <AssociationConnector Association="ETPMSEntity.FK_EP_CONTRACT_EP_CONTRACT" ManuallyRouted="false" />
+        <AssociationConnector Association="ETPMSEntity.FK_EP_TASK_EP_CONTRACT" ManuallyRouted="false" />
+        <AssociationConnector Association="ETPMSEntity.FK_EP_CONTRACT_RELEQUIPMENT_EP_EQUIPMENT_MENUFACTURER" ManuallyRouted="false" />
+        <AssociationConnector Association="ETPMSEntity.FK_OD_BASIC_EP_CONTRACT_RELEQUIPMENT" ManuallyRouted="false" />
+        <AssociationConnector Association="ETPMSEntity.FK_EP_DELEGATION_RELEXPRESS_EP_EXPERIMENT_DELEGATION" ManuallyRouted="false" />
+        <AssociationConnector Association="ETPMSEntity.FK_EP_DELEGATION_RELITEM_EP_EXPERIMENT_DELEGATION" ManuallyRouted="false" />
+        <AssociationConnector Association="ETPMSEntity.FK_EP_EXPERIMENT_DELEGATION_EP_TASK" ManuallyRouted="false" />
+        <AssociationConnector Association="ETPMSEntity.FK_EP_EXPERIMENT_DOCUMENT_EP_TASK" ManuallyRouted="false" />
+        <AssociationConnector Association="ETPMSEntity.FK_OD_BIAS_OD_BASIC" ManuallyRouted="false" />
+        <AssociationConnector Association="ETPMSEntity.FK_OD_CRUSHER_GRANULARITY_OD_BASIC" ManuallyRouted="false" />
+        <AssociationConnector Association="ETPMSEntity.FK_OD_CRUSHING_DIVIDING_MACHINE_OD_BASIC" ManuallyRouted="false" />
+        <AssociationConnector Association="ETPMSEntity.FK_OD_CRUSHING_DIVIDING_MACHINE_OD_BASIC1" ManuallyRouted="false" />
+        <AssociationConnector Association="ETPMSEntity.FK_OD_CRUSHING_MACHINE_OD_BASIC" ManuallyRouted="false" />
+        <AssociationConnector Association="ETPMSEntity.FK_OD_GRANULARITY_OD_BASIC" ManuallyRouted="false" />
+        <AssociationConnector Association="ETPMSEntity.FK_OD_INTEGRATED_PREPARATION_MACHINE_OD_BASIC" ManuallyRouted="false" />
+        <AssociationConnector Association="ETPMSEntity.FK_OD_MILLER_GRANULARITY_OD_BASIC" ManuallyRouted="false" />
+        <AssociationConnector Association="ETPMSEntity.FK_OD_MILLING_MACHINE_OD_BASIC" ManuallyRouted="false" />
+        <AssociationConnector Association="ETPMSEntity.FK_OD_MT_LOSSES_OD_BASIC" ManuallyRouted="false" />
+        <AssociationConnector Association="ETPMSEntity.FK_OD_PRECISION_OD_BASIC" ManuallyRouted="false" />
+        <AssociationConnector Association="ETPMSEntity.FK_OD_RIFFLE_DEVIDING_MACHINE_OD_BASIC" ManuallyRouted="false" />
+        <AssociationConnector Association="ETPMSEntity.FK_OD_SAMPLING_MACHINE_OD_BASIC" ManuallyRouted="false" />
+        <AssociationConnector Association="ETPMSEntity.FK_OD_SPLITTING_RATION_OD_BASIC" ManuallyRouted="false" />
+        <AssociationConnector Association="ETPMSEntity.FK_OD_TEST_INSTRUMENT_OD_BASIC" ManuallyRouted="false" />
+        <AssociationConnector Association="ETPMSEntity.FK_OD_WEIGHT_LOSSES_OD_WEIGHT_LOSSES" ManuallyRouted="false" />
+        <AssociationConnector Association="ETPMSEntity.FK_UNIFIED_PREPARATION_MACHINE_OD_BASIC" ManuallyRouted="false" />
+        <AssociationConnector Association="ETPMSEntity.FK_UM_DEPARTMENT_UM_DEPARTMENT" ManuallyRouted="false" />
+        <AssociationConnector Association="ETPMSEntity.FK_UM_MENU_UM_MENU" ManuallyRouted="false" />
+        <AssociationConnector Association="ETPMSEntity.FK_UM_ROLE_RELMENU_UM_MENU" ManuallyRouted="false" />
+        <AssociationConnector Association="ETPMSEntity.FK_UM_ROLE_RELMENU_UM_ROLE" ManuallyRouted="false" />
+        <AssociationConnector Association="ETPMSEntity.FK_UM_USER_RELROLE_UM_ROLE" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ETPMSEntity.UM_USERINFO" Width="1.5" PointX="9.75" PointY="15.375" />
+        <AssociationConnector Association="ETPMSEntity.FK_EP_TASK_UM_USERINFO" />
+        <AssociationConnector Association="ETPMSEntity.FK_EP_TASK_UM_USERINFO1" />
+        <AssociationConnector Association="ETPMSEntity.FK_EP_EXPERIMENT_DOCUMENT_UM_USERINFO" />
+        <AssociationConnector Association="ETPMSEntity.FK_UM_DEPARTMENT_UM_USERINFO" />
+        <AssociationConnector Association="ETPMSEntity.FK_UM_USER_RELROLE_UM_USERINFO" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,601 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ETPMSEntityStoreContainer" CdmEntityContainer="ETPMSDbContext">
+    <EntitySetMapping Name="BD_CONFIG">
+      <EntityTypeMapping TypeName="ETPMSEntity.BD_CONFIG">
+        <MappingFragment StoreEntitySet="BD_CONFIG">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CONFIG_CATEGORY" ColumnName="CONFIG_CATEGORY" />
+          <ScalarProperty Name="CONFIG_NAME" ColumnName="CONFIG_NAME" />
+          <ScalarProperty Name="CONFIG_VALUE" ColumnName="CONFIG_VALUE" />
+          <ScalarProperty Name="CONFIG_DESCRIPTION" ColumnName="CONFIG_DESCRIPTION" />
+          <ScalarProperty Name="CONFIG_STATUS" ColumnName="CONFIG_STATUS" />
+          <ScalarProperty Name="OPERATOR_ID" ColumnName="OPERATOR_ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EP_CONTRACT">
+      <EntityTypeMapping TypeName="ETPMSEntity.EP_CONTRACT">
+        <MappingFragment StoreEntitySet="EP_CONTRACT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CONTRACT_CODE" ColumnName="CONTRACT_CODE" />
+          <ScalarProperty Name="CONTRACT_NAME" ColumnName="CONTRACT_NAME" />
+          <ScalarProperty Name="CONTRACT_TYPE_ID" ColumnName="CONTRACT_TYPE_ID" />
+          <ScalarProperty Name="CONTRACT_STATUS" ColumnName="CONTRACT_STATUS" />
+          <ScalarProperty Name="PROJECT_CODE" ColumnName="PROJECT_CODE" />
+          <ScalarProperty Name="PROJECT_NAME" ColumnName="PROJECT_NAME" />
+          <ScalarProperty Name="PLANT_ID" ColumnName="PLANT_ID" />
+          <ScalarProperty Name="PLANT_CONTRACTS" ColumnName="PLANT_CONTRACTS" />
+          <ScalarProperty Name="SIGNING_TIME" ColumnName="SIGNING_TIME" />
+          <ScalarProperty Name="CONTRACT_VALUE" ColumnName="CONTRACT_VALUE" />
+          <ScalarProperty Name="RECEIVABLE_VALUE" ColumnName="RECEIVABLE_VALUE" />
+          <ScalarProperty Name="RECEIVED_VALUE" ColumnName="RECEIVED_VALUE" />
+          <ScalarProperty Name="SUBCONTRACT_VALUE" ColumnName="SUBCONTRACT_VALUE" />
+          <ScalarProperty Name="SUBCONTRACT_PAYMENT" ColumnName="SUBCONTRACT_PAYMENT" />
+          <ScalarProperty Name="OPERATOR_ID" ColumnName="OPERATOR_ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_TINE" ColumnName="UPDATE_TINE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EP_CONTRACT_RELEQUIPMENT">
+      <EntityTypeMapping TypeName="ETPMSEntity.EP_CONTRACT_RELEQUIPMENT">
+        <MappingFragment StoreEntitySet="EP_CONTRACT_RELEQUIPMENT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MENUFACTURER_ID" ColumnName="MENUFACTURER_ID" />
+          <ScalarProperty Name="EQUIPMENT_TYPE_ID" ColumnName="EQUIPMENT_TYPE_ID" />
+          <ScalarProperty Name="EQUIPMENT_CODE" ColumnName="EQUIPMENT_CODE" />
+          <ScalarProperty Name="EQUIPMENT_DESCRIPTION" ColumnName="EQUIPMENT_DESCRIPTION" />
+          <ScalarProperty Name="PRODUCTION_TIME" ColumnName="PRODUCTION_TIME" />
+          <ScalarProperty Name="USAGE_TYPE_ID" ColumnName="USAGE_TYPE_ID" />
+          <ScalarProperty Name="EXPERIMENT_STATUS" ColumnName="EXPERIMENT_STATUS" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="OPERATOR_ID" ColumnName="OPERATOR_ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EP_DELEGATION">
+      <EntityTypeMapping TypeName="ETPMSEntity.EP_DELEGATION">
+        <MappingFragment StoreEntitySet="EP_DELEGATION">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TASK_ID" ColumnName="TASK_ID" />
+          <ScalarProperty Name="DELEGATION__CODE" ColumnName="DELEGATION__CODE" />
+          <ScalarProperty Name="DELEGATION_DATE" ColumnName="DELEGATION_DATE" />
+          <ScalarProperty Name="DELEGATION_COST" ColumnName="DELEGATION_COST" />
+          <ScalarProperty Name="DELEGATION_STATUS" ColumnName="DELEGATION_STATUS" />
+          <ScalarProperty Name="CLIENT_NAME" ColumnName="CLIENT_NAME" />
+          <ScalarProperty Name="CLIENT_CONTRACTS_NAME" ColumnName="CLIENT_CONTRACTS_NAME" />
+          <ScalarProperty Name="CLIENT_CONTRACT_INFORMATION" ColumnName="CLIENT_CONTRACT_INFORMATION" />
+          <ScalarProperty Name="SERVER_NAME" ColumnName="SERVER_NAME" />
+          <ScalarProperty Name="SERVER_CONTRACTS_NAME" ColumnName="SERVER_CONTRACTS_NAME" />
+          <ScalarProperty Name="SERVER_CONTRACT_INFORMATION" ColumnName="SERVER_CONTRACT_INFORMATION" />
+          <ScalarProperty Name="RECEIVING_TYPE_ID" ColumnName="RECEIVING_TYPE_ID" />
+          <ScalarProperty Name="REMAINING_PROCESSING_TYPE_ID" ColumnName="REMAINING_PROCESSING_TYPE_ID" />
+          <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+          <ScalarProperty Name="OPERATOR_ID" ColumnName="OPERATOR_ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EP_DELEGATION_RELEXPRESS">
+      <EntityTypeMapping TypeName="ETPMSEntity.EP_DELEGATION_RELEXPRESS">
+        <MappingFragment StoreEntitySet="EP_DELEGATION_RELEXPRESS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DELEGATION_ID" ColumnName="DELEGATION_ID" />
+          <ScalarProperty Name="MATERIAL_TYPE_ID" ColumnName="MATERIAL_TYPE_ID" />
+          <ScalarProperty Name="EXPRESS_COMPANY_ID" ColumnName="EXPRESS_COMPANY_ID" />
+          <ScalarProperty Name="EXPRESS_ORDER_CODE" ColumnName="EXPRESS_ORDER_CODE" />
+          <ScalarProperty Name="DELIVERY_TIME" ColumnName="DELIVERY_TIME" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="OPERATOR_ID" ColumnName="OPERATOR_ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EP_DELEGATION_RELITEM">
+      <EntityTypeMapping TypeName="ETPMSEntity.EP_DELEGATION_RELITEM">
+        <MappingFragment StoreEntitySet="EP_DELEGATION_RELITEM">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DELEGATION_ID" ColumnName="DELEGATION_ID" />
+          <ScalarProperty Name="ITEM_CODE" ColumnName="ITEM_CODE" />
+          <ScalarProperty Name="ITEM_NAME" ColumnName="ITEM_NAME" />
+          <ScalarProperty Name="ITEM_DESCRIPTION" ColumnName="ITEM_DESCRIPTION" />
+          <ScalarProperty Name="ITEM_QUANTITY" ColumnName="ITEM_QUANTITY" />
+          <ScalarProperty Name="ITEM_STATUS" ColumnName="ITEM_STATUS" />
+          <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+          <ScalarProperty Name="OPERATOR_ID" ColumnName="OPERATOR_ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EP_DOCUMENT">
+      <EntityTypeMapping TypeName="ETPMSEntity.EP_DOCUMENT">
+        <MappingFragment StoreEntitySet="EP_DOCUMENT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DOCUMENT_NAME" ColumnName="DOCUMENT_NAME" />
+          <ScalarProperty Name="DOCUMENT_TYPE_ID" ColumnName="DOCUMENT_TYPE_ID" />
+          <ScalarProperty Name="EQUIPMENT_TYPE_ID" ColumnName="EQUIPMENT_TYPE_ID" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="OPERATOR_ID" ColumnName="OPERATOR_ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EP_EQUIPMENT_MENUFACTURER">
+      <EntityTypeMapping TypeName="ETPMSEntity.EP_EQUIPMENT_MENUFACTURER">
+        <MappingFragment StoreEntitySet="EP_EQUIPMENT_MENUFACTURER">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MENUFACTURER_NAME" ColumnName="MENUFACTURER_NAME" />
+          <ScalarProperty Name="MENUFACTURER_SHORT_NAME" ColumnName="MENUFACTURER_SHORT_NAME" />
+          <ScalarProperty Name="MENUFACTURER_DESCRIPTION" ColumnName="MENUFACTURER_DESCRIPTION" />
+          <ScalarProperty Name="CONTRACTS_NAME" ColumnName="CONTRACTS_NAME" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+          <ScalarProperty Name="TELEPHONE" ColumnName="TELEPHONE" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="OPERATOR_ID" ColumnName="OPERATOR_ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EP_EQUIPMENT_TASK">
+      <EntityTypeMapping TypeName="ETPMSEntity.EP_EQUIPMENT_TASK">
+        <MappingFragment StoreEntitySet="EP_EQUIPMENT_TASK">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CONTRACT_ID" ColumnName="CONTRACT_ID" />
+          <ScalarProperty Name="TASK_CODE" ColumnName="TASK_CODE" />
+          <ScalarProperty Name="TASK_STATUS" ColumnName="TASK_STATUS" />
+          <ScalarProperty Name="TASK_DESCRIPTION" ColumnName="TASK_DESCRIPTION" />
+          <ScalarProperty Name="TASK_LEADER_ID" ColumnName="TASK_LEADER_ID" />
+          <ScalarProperty Name="TAST_STAFF_IDS" ColumnName="TAST_STAFF_IDS" />
+          <ScalarProperty Name="BEGIN_TIME" ColumnName="BEGIN_TIME" />
+          <ScalarProperty Name="END_TIME" ColumnName="END_TIME" />
+          <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+          <ScalarProperty Name="APPROVER_ID" ColumnName="APPROVER_ID" />
+          <ScalarProperty Name="OPERATOR_ID" ColumnName="OPERATOR_ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EP_EXPERIMENT_DOCUMENT">
+      <EntityTypeMapping TypeName="ETPMSEntity.EP_EXPERIMENT_DOCUMENT">
+        <MappingFragment StoreEntitySet="EP_EXPERIMENT_DOCUMENT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TASK_ID" ColumnName="TASK_ID" />
+          <ScalarProperty Name="DOCUMENT_NAME" ColumnName="DOCUMENT_NAME" />
+          <ScalarProperty Name="DOCUMENT_DESCRIPTION" ColumnName="DOCUMENT_DESCRIPTION" />
+          <ScalarProperty Name="DOCUMENT_URL" ColumnName="DOCUMENT_URL" />
+          <ScalarProperty Name="DOCUMENT_STATUS" ColumnName="DOCUMENT_STATUS" />
+          <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+          <ScalarProperty Name="APPROVER_ID" ColumnName="APPROVER_ID" />
+          <ScalarProperty Name="OPERATOR_ID" ColumnName="OPERATOR_ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EP_POWER_PLANT">
+      <EntityTypeMapping TypeName="ETPMSEntity.EP_POWER_PLANT">
+        <MappingFragment StoreEntitySet="EP_POWER_PLANT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PLANT_NAME" ColumnName="PLANT_NAME" />
+          <ScalarProperty Name="PLANT_SHORT_NAME" ColumnName="PLANT_SHORT_NAME" />
+          <ScalarProperty Name="PLANT_DESCRIPTION" ColumnName="PLANT_DESCRIPTION" />
+          <ScalarProperty Name="CONTRACTS_NAME" ColumnName="CONTRACTS_NAME" />
+          <ScalarProperty Name="TELEPHONE" ColumnName="TELEPHONE" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="OPERATOR_ID" ColumnName="OPERATOR_ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OD_BASIC">
+      <EntityTypeMapping TypeName="ETPMSEntity.OD_BASIC">
+        <MappingFragment StoreEntitySet="OD_BASIC">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CONTRACT_RELEQUIPMENT_ID" ColumnName="CONTRACT_RELEQUIPMENT_ID" />
+          <ScalarProperty Name="RECODE_CODE" ColumnName="RECODE_CODE" />
+          <ScalarProperty Name="EQUIPMENT_TYPE_ID" ColumnName="EQUIPMENT_TYPE_ID" />
+          <ScalarProperty Name="EQUIPMENT_DESCRIPTION" ColumnName="EQUIPMENT_DESCRIPTION" />
+          <ScalarProperty Name="TEST_DATE" ColumnName="TEST_DATE" />
+          <ScalarProperty Name="TEST_INSTITUTION" ColumnName="TEST_INSTITUTION" />
+          <ScalarProperty Name="TEST_PERSONNEL" ColumnName="TEST_PERSONNEL" />
+          <ScalarProperty Name="SUPERVISORS" ColumnName="SUPERVISORS" />
+          <ScalarProperty Name="DATA_STATUS" ColumnName="DATA_STATUS" />
+          <ScalarProperty Name="OPERATOR_ID" ColumnName="OPERATOR_ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OD_BIAS">
+      <EntityTypeMapping TypeName="ETPMSEntity.OD_BIAS">
+        <MappingFragment StoreEntitySet="OD_BIAS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OD_ID" ColumnName="OD_ID" />
+          <ScalarProperty Name="BIAS_CODE" ColumnName="BIAS_CODE" />
+          <ScalarProperty Name="RESERVED_SAMPLE" ColumnName="RESERVED_SAMPLE" />
+          <ScalarProperty Name="REJECTED_SAMPLE" ColumnName="REJECTED_SAMPLE" />
+          <ScalarProperty Name="MANUAL_SAMPLE" ColumnName="MANUAL_SAMPLE" />
+          <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+          <ScalarProperty Name="CREATOR_ID" ColumnName="CREATOR_ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OD_CRUSHER_GRANULARITY">
+      <EntityTypeMapping TypeName="ETPMSEntity.OD_CRUSHER_GRANULARITY">
+        <MappingFragment StoreEntitySet="OD_CRUSHER_GRANULARITY">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OD_ID" ColumnName="OD_ID" />
+          <ScalarProperty Name="GRANULARITY_CODE" ColumnName="GRANULARITY_CODE" />
+          <ScalarProperty Name="GRANULARITY_TYPE_ID" ColumnName="GRANULARITY_TYPE_ID" />
+          <ScalarProperty Name="SAMPLE_WEIGHT" ColumnName="SAMPLE_WEIGHT" />
+          <ScalarProperty Name="GRANULARITY_WEIGHT_RANGE1" ColumnName="GRANULARITY_WEIGHT_RANGE1" />
+          <ScalarProperty Name="GRANULARITY_WEIGHT_RANGE2" ColumnName="GRANULARITY_WEIGHT_RANGE2" />
+          <ScalarProperty Name="GRANULARITY_RATION_RANGE1" ColumnName="GRANULARITY_RATION_RANGE1" />
+          <ScalarProperty Name="GRANULARITY_RATION_RANGE2" ColumnName="GRANULARITY_RATION_RANGE2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OD_CRUSHING_DIVIDING_MACHINE">
+      <EntityTypeMapping TypeName="ETPMSEntity.OD_CRUSHING_DIVIDING_MACHINE">
+        <MappingFragment StoreEntitySet="OD_CRUSHING_DIVIDING_MACHINE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OD_ID" ColumnName="OD_ID" />
+          <ScalarProperty Name="SAMPLE_CODE" ColumnName="SAMPLE_CODE" />
+          <ScalarProperty Name="COAL_SOURCE" ColumnName="COAL_SOURCE" />
+          <ScalarProperty Name="COAL_TYPE_ID" ColumnName="COAL_TYPE_ID" />
+          <ScalarProperty Name="ENVIRONMENT_TEMPERATURE" ColumnName="ENVIRONMENT_TEMPERATURE" />
+          <ScalarProperty Name="ENVIRONMENT_HUMIDITY" ColumnName="ENVIRONMENT_HUMIDITY" />
+          <ScalarProperty Name="MAXIMUM_GRANULARITY" ColumnName="MAXIMUM_GRANULARITY" />
+          <ScalarProperty Name="PRECISION_SAMPLING_TYPE_ID" ColumnName="PRECISION_SAMPLING_TYPE_ID" />
+          <ScalarProperty Name="BIAS_SAMPLING_TYPE_ID" ColumnName="BIAS_SAMPLING_TYPE_ID" />
+          <ScalarProperty Name="MT_PREPARATION_TYPE_ID" ColumnName="MT_PREPARATION_TYPE_ID" />
+          <ScalarProperty Name="MT_TEST_TYPE_ID" ColumnName="MT_TEST_TYPE_ID" />
+          <ScalarProperty Name="OUTPUT_GRANULARITY" ColumnName="OUTPUT_GRANULARITY" />
+          <ScalarProperty Name="PRODUCTIVITY" ColumnName="PRODUCTIVITY" />
+          <ScalarProperty Name="SPLITTING_RATION" ColumnName="SPLITTING_RATION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OD_CRUSHING_MACHINE">
+      <EntityTypeMapping TypeName="ETPMSEntity.OD_CRUSHING_MACHINE">
+        <MappingFragment StoreEntitySet="OD_CRUSHING_MACHINE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OD_ID" ColumnName="OD_ID" />
+          <ScalarProperty Name="MAXIMUM_GRANULARITY" ColumnName="MAXIMUM_GRANULARITY" />
+          <ScalarProperty Name="OUTPUT_GRANULARITY" ColumnName="OUTPUT_GRANULARITY" />
+          <ScalarProperty Name="PRODUCTIVITY" ColumnName="PRODUCTIVITY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OD_DIEVIDER_GRANULARITY">
+      <EntityTypeMapping TypeName="ETPMSEntity.OD_DIEVIDER_GRANULARITY">
+        <MappingFragment StoreEntitySet="OD_DIEVIDER_GRANULARITY">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OD_ID" ColumnName="OD_ID" />
+          <ScalarProperty Name="GRANULARITY_CODE" ColumnName="GRANULARITY_CODE" />
+          <ScalarProperty Name="GRANULARITY_SAMPLE_TYPE_ID" ColumnName="GRANULARITY_SAMPLE_TYPE_ID" />
+          <ScalarProperty Name="SAMPLE_WEIGHT" ColumnName="SAMPLE_WEIGHT" />
+          <ScalarProperty Name="GRANULARITY_WEIGHT_RANGE1" ColumnName="GRANULARITY_WEIGHT_RANGE1" />
+          <ScalarProperty Name="GRANULARITY_WEIGHT_RANGE2" ColumnName="GRANULARITY_WEIGHT_RANGE2" />
+          <ScalarProperty Name="GRANULARITY_RATION_RANGE1" ColumnName="GRANULARITY_RATION_RANGE1" />
+          <ScalarProperty Name="GRANULARITY_RATION_RANGE2" ColumnName="GRANULARITY_RATION_RANGE2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OD_ELECTRIC_DIVIDING_MACHINE">
+      <EntityTypeMapping TypeName="ETPMSEntity.OD_ELECTRIC_DIVIDING_MACHINE">
+        <MappingFragment StoreEntitySet="OD_ELECTRIC_DIVIDING_MACHINE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OD_ID" ColumnName="OD_ID" />
+          <ScalarProperty Name="SAMPLE_CODE" ColumnName="SAMPLE_CODE" />
+          <ScalarProperty Name="COAL_SOURCE" ColumnName="COAL_SOURCE" />
+          <ScalarProperty Name="COAL_TYPE_ID" ColumnName="COAL_TYPE_ID" />
+          <ScalarProperty Name="ENVIRONMENT_TEMPERATURE" ColumnName="ENVIRONMENT_TEMPERATURE" />
+          <ScalarProperty Name="ENVIRONMENT_HUMIDITY" ColumnName="ENVIRONMENT_HUMIDITY" />
+          <ScalarProperty Name="MAXIMUM_GRANULARITY" ColumnName="MAXIMUM_GRANULARITY" />
+          <ScalarProperty Name="PRECISION_SAMPLING_TYPE_ID" ColumnName="PRECISION_SAMPLING_TYPE_ID" />
+          <ScalarProperty Name="BIAS_SAMPLING_TYPE_ID" ColumnName="BIAS_SAMPLING_TYPE_ID" />
+          <ScalarProperty Name="MT_PREPARATION_TYPE_ID" ColumnName="MT_PREPARATION_TYPE_ID" />
+          <ScalarProperty Name="MT_TEST_TYPE_ID" ColumnName="MT_TEST_TYPE_ID" />
+          <ScalarProperty Name="SPLITTING_RATION" ColumnName="SPLITTING_RATION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OD_INTEGRATED_PREPARATION_MACHINE">
+      <EntityTypeMapping TypeName="ETPMSEntity.OD_INTEGRATED_PREPARATION_MACHINE">
+        <MappingFragment StoreEntitySet="OD_INTEGRATED_PREPARATION_MACHINE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OD_ID" ColumnName="OD_ID" />
+          <ScalarProperty Name="SAMPLE_CODE" ColumnName="SAMPLE_CODE" />
+          <ScalarProperty Name="ENVIRONMENT_TEMPERATURE" ColumnName="ENVIRONMENT_TEMPERATURE" />
+          <ScalarProperty Name="ENVIRONMENT_HUMIDITY" ColumnName="ENVIRONMENT_HUMIDITY" />
+          <ScalarProperty Name="COAL_SOURCE" ColumnName="COAL_SOURCE" />
+          <ScalarProperty Name="COAL_TYPE_ID" ColumnName="COAL_TYPE_ID" />
+          <ScalarProperty Name="MAXIMUM_GRANULARITY" ColumnName="MAXIMUM_GRANULARITY" />
+          <ScalarProperty Name="PRECISION_SAMPLING_TYPE_ID" ColumnName="PRECISION_SAMPLING_TYPE_ID" />
+          <ScalarProperty Name="BIAS_SAMPLING_TYPE_ID" ColumnName="BIAS_SAMPLING_TYPE_ID" />
+          <ScalarProperty Name="MT_PREPARATION_TYPE_ID" ColumnName="MT_PREPARATION_TYPE_ID" />
+          <ScalarProperty Name="MT_TEST_TYPE_ID" ColumnName="MT_TEST_TYPE_ID" />
+          <ScalarProperty Name="INPUT_WEIGHT_RANGE" ColumnName="INPUT_WEIGHT_RANGE" />
+          <ScalarProperty Name="MT_OUTPUT_WEIGHT_RANGE" ColumnName="MT_OUTPUT_WEIGHT_RANGE" />
+          <ScalarProperty Name="MT_OUTPUT_GRANULARITY_RANGE" ColumnName="MT_OUTPUT_GRANULARITY_RANGE" />
+          <ScalarProperty Name="SHARING_OUTPUT_WEIGHT_RANGE" ColumnName="SHARING_OUTPUT_WEIGHT_RANGE" />
+          <ScalarProperty Name="SHARING_OUTPUT_GRANULARITY_RANGE" ColumnName="SHARING_OUTPUT_GRANULARITY_RANGE" />
+          <ScalarProperty Name="RESERVED_OUTPUT_WEIGHT_RANGE" ColumnName="RESERVED_OUTPUT_WEIGHT_RANGE" />
+          <ScalarProperty Name="RESERVED_OUTPUT_GRANULARITY_RANGE" ColumnName="RESERVED_OUTPUT_GRANULARITY_RANGE" />
+          <ScalarProperty Name="GENERAL_OUTPUT_WEIGHT_RANGE" ColumnName="GENERAL_OUTPUT_WEIGHT_RANGE" />
+          <ScalarProperty Name="GENERAL_OUTPUT_GRANULARITY_RANGE" ColumnName="GENERAL_OUTPUT_GRANULARITY_RANGE" />
+          <ScalarProperty Name="WORKING_PACE_RANGE" ColumnName="WORKING_PACE_RANGE" />
+          <ScalarProperty Name="AVAILIABLE_MT_RANGE" ColumnName="AVAILIABLE_MT_RANGE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OD_MILLER_GRANULARITY">
+      <EntityTypeMapping TypeName="ETPMSEntity.OD_MILLER_GRANULARITY">
+        <MappingFragment StoreEntitySet="OD_MILLER_GRANULARITY">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OD_ID" ColumnName="OD_ID" />
+          <ScalarProperty Name="SAMPLE_WEIGHT" ColumnName="SAMPLE_WEIGHT" />
+          <ScalarProperty Name="MILLING_TIME" ColumnName="MILLING_TIME" />
+          <ScalarProperty Name="GRANULARITY_WEIGHT_RANGE1" ColumnName="GRANULARITY_WEIGHT_RANGE1" />
+          <ScalarProperty Name="GRANULARITY_WEIGHT_RANGE2" ColumnName="GRANULARITY_WEIGHT_RANGE2" />
+          <ScalarProperty Name="GRANULARITY_RATION_RANGE1" ColumnName="GRANULARITY_RATION_RANGE1" />
+          <ScalarProperty Name="GRANULARITY_RATION_RANGE2" ColumnName="GRANULARITY_RATION_RANGE2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OD_MILLING_MACHINE">
+      <EntityTypeMapping TypeName="ETPMSEntity.OD_MILLING_MACHINE">
+        <MappingFragment StoreEntitySet="OD_MILLING_MACHINE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OD_ID" ColumnName="OD_ID" />
+          <ScalarProperty Name="INPUT_WEIGHT" ColumnName="INPUT_WEIGHT" />
+          <ScalarProperty Name="MAXIMUM_INPUT_GRANULARITY" ColumnName="MAXIMUM_INPUT_GRANULARITY" />
+          <ScalarProperty Name="OUTPUT_GRANULARITY_RANGE" ColumnName="OUTPUT_GRANULARITY_RANGE" />
+          <ScalarProperty Name="PRODUCTIVITY" ColumnName="PRODUCTIVITY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OD_MT_LOSSES">
+      <EntityTypeMapping TypeName="ETPMSEntity.OD_MT_LOSSES">
+        <MappingFragment StoreEntitySet="OD_MT_LOSSES">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OD_ID" ColumnName="OD_ID" />
+          <ScalarProperty Name="MT_CODE" ColumnName="MT_CODE" />
+          <ScalarProperty Name="PALLET_CODE" ColumnName="PALLET_CODE" />
+          <ScalarProperty Name="CONTAINER_WEIGHT" ColumnName="CONTAINER_WEIGHT" />
+          <ScalarProperty Name="SAMPLER_WEIGHT" ColumnName="SAMPLER_WEIGHT" />
+          <ScalarProperty Name="DRY_WEIGHT" ColumnName="DRY_WEIGHT" />
+          <ScalarProperty Name="DRYING_CHECK1" ColumnName="DRYING_CHECK1" />
+          <ScalarProperty Name="DRYING_CHECK2" ColumnName="DRYING_CHECK2" />
+          <ScalarProperty Name="MT" ColumnName="MT" />
+          <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+          <ScalarProperty Name="CREATOR_ID" ColumnName="CREATOR_ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OD_PRECISION">
+      <EntityTypeMapping TypeName="ETPMSEntity.OD_PRECISION">
+        <MappingFragment StoreEntitySet="OD_PRECISION">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OD_ID" ColumnName="OD_ID" />
+          <ScalarProperty Name="PRECISION_CODE" ColumnName="PRECISION_CODE" />
+          <ScalarProperty Name="WEIGHT" ColumnName="WEIGHT" />
+          <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+          <ScalarProperty Name="CREATER_ID" ColumnName="CREATER_ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OD_RIFFLE_DEVIDING_MACHINE">
+      <EntityTypeMapping TypeName="ETPMSEntity.OD_RIFFLE_DEVIDING_MACHINE">
+        <MappingFragment StoreEntitySet="OD_RIFFLE_DEVIDING_MACHINE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OD_ID" ColumnName="OD_ID" />
+          <ScalarProperty Name="SPLITTING_GRANULARITY" ColumnName="SPLITTING_GRANULARITY" />
+          <ScalarProperty Name="CELL_WIDTH" ColumnName="CELL_WIDTH" />
+          <ScalarProperty Name="CELL_QUANTITY" ColumnName="CELL_QUANTITY" />
+          <ScalarProperty Name="SHAPE_SIZE" ColumnName="SHAPE_SIZE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OD_SAMPLING_MACHINE">
+      <EntityTypeMapping TypeName="ETPMSEntity.OD_SAMPLING_MACHINE">
+        <MappingFragment StoreEntitySet="OD_SAMPLING_MACHINE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OD_ID" ColumnName="OD_ID" />
+          <ScalarProperty Name="SAMPLE_CODE" ColumnName="SAMPLE_CODE" />
+          <ScalarProperty Name="ENVIRONMENT_TEMPERATURE" ColumnName="ENVIRONMENT_TEMPERATURE" />
+          <ScalarProperty Name="ENVIRONMENT_HUMIDITY" ColumnName="ENVIRONMENT_HUMIDITY" />
+          <ScalarProperty Name="COAL_SOURCE" ColumnName="COAL_SOURCE" />
+          <ScalarProperty Name="COAL_TYPE_ID" ColumnName="COAL_TYPE_ID" />
+          <ScalarProperty Name="MAXIMUM_GRANULARITY" ColumnName="MAXIMUM_GRANULARITY" />
+          <ScalarProperty Name="PRECISION_SAMPLING_TYPE_ID" ColumnName="PRECISION_SAMPLING_TYPE_ID" />
+          <ScalarProperty Name="BIAS_SAMPLING_TYPE_ID" ColumnName="BIAS_SAMPLING_TYPE_ID" />
+          <ScalarProperty Name="MT_PREPARATION_TYPE_ID" ColumnName="MT_PREPARATION_TYPE_ID" />
+          <ScalarProperty Name="MT_TEST_TYPE_ID" ColumnName="MT_TEST_TYPE_ID" />
+          <ScalarProperty Name="INSTALLATION_POSITION" ColumnName="INSTALLATION_POSITION" />
+          <ScalarProperty Name="SAMPLING_HEAD_TYPE" ColumnName="SAMPLING_HEAD_TYPE" />
+          <ScalarProperty Name="SAMPLING_HEAD_SIZE" ColumnName="SAMPLING_HEAD_SIZE" />
+          <ScalarProperty Name="CRUSHER_TYPE" ColumnName="CRUSHER_TYPE" />
+          <ScalarProperty Name="CRUSHER_OUTPUT_GRANULARITY" ColumnName="CRUSHER_OUTPUT_GRANULARITY" />
+          <ScalarProperty Name="DEVIDING_TYPE" ColumnName="DEVIDING_TYPE" />
+          <ScalarProperty Name="DEVIDING_HEAD_SIZE" ColumnName="DEVIDING_HEAD_SIZE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OD_SPLITTING_RATION">
+      <EntityTypeMapping TypeName="ETPMSEntity.OD_SPLITTING_RATION">
+        <MappingFragment StoreEntitySet="OD_SPLITTING_RATION">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OD_ID" ColumnName="OD_ID" />
+          <ScalarProperty Name="SPLITTING_CODE" ColumnName="SPLITTING_CODE" />
+          <ScalarProperty Name="SAMPLE_WEIGHT" ColumnName="SAMPLE_WEIGHT" />
+          <ScalarProperty Name="RESERVE_WEIGHT_SAMPLE1" ColumnName="RESERVE_WEIGHT_SAMPLE1" />
+          <ScalarProperty Name="RESERVE_WEIGHT_SAMPLE2" ColumnName="RESERVE_WEIGHT_SAMPLE2" />
+          <ScalarProperty Name="RESERVE_RATION_SAMPLE1" ColumnName="RESERVE_RATION_SAMPLE1" />
+          <ScalarProperty Name="RESERVE_RATION_SAMPLE2" ColumnName="RESERVE_RATION_SAMPLE2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OD_TEST_INSTRUMENT">
+      <EntityTypeMapping TypeName="ETPMSEntity.OD_TEST_INSTRUMENT">
+        <MappingFragment StoreEntitySet="OD_TEST_INSTRUMENT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OD_ID" ColumnName="OD_ID" />
+          <ScalarProperty Name="INSTRUMENT_TYPE_ID" ColumnName="INSTRUMENT_TYPE_ID" />
+          <ScalarProperty Name="INSTRUMENT_DESCRIPTION" ColumnName="INSTRUMENT_DESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OD_UNIFIED_PREPARATION_MACHINE">
+      <EntityTypeMapping TypeName="ETPMSEntity.OD_UNIFIED_PREPARATION_MACHINE">
+        <MappingFragment StoreEntitySet="OD_UNIFIED_PREPARATION_MACHINE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OD_ID" ColumnName="OD_ID" />
+          <ScalarProperty Name="SAMPLE_CODE" ColumnName="SAMPLE_CODE" />
+          <ScalarProperty Name="ENVIRONMENT_TEMPERATURE" ColumnName="ENVIRONMENT_TEMPERATURE" />
+          <ScalarProperty Name="ENVIRONMENT_HUMIDITY" ColumnName="ENVIRONMENT_HUMIDITY" />
+          <ScalarProperty Name="COAL_SOURCE" ColumnName="COAL_SOURCE" />
+          <ScalarProperty Name="COAL_TYPE_ID" ColumnName="COAL_TYPE_ID" />
+          <ScalarProperty Name="MAXIMUM_GRANULARITY" ColumnName="MAXIMUM_GRANULARITY" />
+          <ScalarProperty Name="PRECISION_SAMPLING_TYPE_ID" ColumnName="PRECISION_SAMPLING_TYPE_ID" />
+          <ScalarProperty Name="BIAS_SAMPLING_TYPE_ID" ColumnName="BIAS_SAMPLING_TYPE_ID" />
+          <ScalarProperty Name="MT_PREPARATION_TYPE_ID" ColumnName="MT_PREPARATION_TYPE_ID" />
+          <ScalarProperty Name="MT_TEST_TYPE_ID" ColumnName="MT_TEST_TYPE_ID" />
+          <ScalarProperty Name="OUT_PUT_GRANULARITY_STEP1" ColumnName="OUT_PUT_GRANULARITY_STEP1" />
+          <ScalarProperty Name="SPLITTING_RATION_STEP1" ColumnName="SPLITTING_RATION_STEP1" />
+          <ScalarProperty Name="OUT_PUT_GRANULARITY_STEP2" ColumnName="OUT_PUT_GRANULARITY_STEP2" />
+          <ScalarProperty Name="SPLITTING_RATION_STEP2" ColumnName="SPLITTING_RATION_STEP2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OD_WEIGHT_LOSSES">
+      <EntityTypeMapping TypeName="ETPMSEntity.OD_WEIGHT_LOSSES">
+        <MappingFragment StoreEntitySet="OD_WEIGHT_LOSSES">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OD_ID" ColumnName="OD_ID" />
+          <ScalarProperty Name="WEIGHT_CODE" ColumnName="WEIGHT_CODE" />
+          <ScalarProperty Name="INPUT_WEIGHT" ColumnName="INPUT_WEIGHT" />
+          <ScalarProperty Name="OUTPUT_WEIGHT" ColumnName="OUTPUT_WEIGHT" />
+          <ScalarProperty Name="LOSS_WEIGHT" ColumnName="LOSS_WEIGHT" />
+          <ScalarProperty Name="LOSS_RATION" ColumnName="LOSS_RATION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UM_DEPARTMENT">
+      <EntityTypeMapping TypeName="ETPMSEntity.UM_DEPARTMENT">
+        <MappingFragment StoreEntitySet="UM_DEPARTMENT">
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FATHER_DEPARTMENT_ID" ColumnName="FATHER_DEPARTMENT_ID" />
+          <ScalarProperty Name="DEPARTMENT_LEADER_ID" ColumnName="DEPARTMENT_LEADER_ID" />
+          <ScalarProperty Name="DEPARTMENT_CODE" ColumnName="DEPARTMENT_CODE" />
+          <ScalarProperty Name="DEPARTMENT_NAME" ColumnName="DEPARTMENT_NAME" />
+          <ScalarProperty Name="DEAPRTMENT_SHORT_NAME" ColumnName="DEAPRTMENT_SHORT_NAME" />
+          <ScalarProperty Name="DEPARTEMNT_DESCRIPTION" ColumnName="DEPARTEMNT_DESCRIPTION" />
+          <ScalarProperty Name="DEPARTMENT_INDEX" ColumnName="DEPARTMENT_INDEX" />
+          <ScalarProperty Name="OPERATOR_ID" ColumnName="OPERATOR_ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UM_MENU">
+      <EntityTypeMapping TypeName="ETPMSEntity.UM_MENU">
+        <MappingFragment StoreEntitySet="UM_MENU">
+          <ScalarProperty Name="CSS_CLASS" ColumnName="CSS_CLASS" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FATHER_MENU_ID" ColumnName="FATHER_MENU_ID" />
+          <ScalarProperty Name="MENU_CODE" ColumnName="MENU_CODE" />
+          <ScalarProperty Name="MENU_NAME" ColumnName="MENU_NAME" />
+          <ScalarProperty Name="MENU_INDEX" ColumnName="MENU_INDEX" />
+          <ScalarProperty Name="MENU_DESCRIPTION" ColumnName="MENU_DESCRIPTION" />
+          <ScalarProperty Name="TRANSFER_URL" ColumnName="TRANSFER_URL" />
+          <ScalarProperty Name="IMG_URL" ColumnName="IMG_URL" />
+          <ScalarProperty Name="IS_VISIBLE" ColumnName="IS_VISIBLE" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+          <ScalarProperty Name="OPERATOR_ID" ColumnName="OPERATOR_ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UM_ROLE">
+      <EntityTypeMapping TypeName="ETPMSEntity.UM_ROLE">
+        <MappingFragment StoreEntitySet="UM_ROLE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ROLE_CODE" ColumnName="ROLE_CODE" />
+          <ScalarProperty Name="ROLE_NAME" ColumnName="ROLE_NAME" />
+          <ScalarProperty Name="ROLE_DESCRIPTION" ColumnName="ROLE_DESCRIPTION" />
+          <ScalarProperty Name="ROLE_INDEX" ColumnName="ROLE_INDEX" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="OPERATOR_ID" ColumnName="OPERATOR_ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UM_ROLE_RELMENU">
+      <EntityTypeMapping TypeName="ETPMSEntity.UM_ROLE_RELMENU">
+        <MappingFragment StoreEntitySet="UM_ROLE_RELMENU">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+          <ScalarProperty Name="MENU_ID" ColumnName="MENU_ID" />
+          <ScalarProperty Name="CREATER_ID" ColumnName="CREATER_ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UM_USER_RELROLE">
+      <EntityTypeMapping TypeName="ETPMSEntity.UM_USER_RELROLE">
+        <MappingFragment StoreEntitySet="UM_USER_RELROLE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+          <ScalarProperty Name="CREATER_ID" ColumnName="CREATER_ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UM_USERINFO">
+      <EntityTypeMapping TypeName="ETPMSEntity.UM_USERINFO">
+        <MappingFragment StoreEntitySet="UM_USERINFO">
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="OPERATOR_ID" ColumnName="OPERATOR_ID" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="USER_STATUS" ColumnName="USER_STATUS" />
+          <ScalarProperty Name="SEX" ColumnName="SEX" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="TELEPHONE" ColumnName="TELEPHONE" />
+          <ScalarProperty Name="DEPARTMENT_ID" ColumnName="DEPARTMENT_ID" />
+          <ScalarProperty Name="LAST_LOGIN_TIME" ColumnName="LAST_LOGIN_TIME" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+          <ScalarProperty Name="USER_CODE" ColumnName="USER_CODE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

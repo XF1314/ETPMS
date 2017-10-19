@@ -1,0 +1,336 @@
+﻿
+<div id="users">
+    <style type="text/css">
+        #users .e-icon-cloud {
+            background-image: url('../../Content/icons/menu/cloud.png');
+            background-repeat: no-repeat;
+        }
+
+        #users .e-icon-file {
+            background-image: url('../../Content/icons/menu/file.png');
+            background-repeat: no-repeat;
+        }
+    </style>
+    <div id="temp-data">
+        <input type="hidden" id="hidDepartments" value="@ViewBag.AllDepartments" />
+        <input type="hidden" id="hidUserStatus" value="@ViewBag.AllUserStatus" />
+        <input type="hidden" id="hidSexes" value="@ViewBag.AllSexes" />
+        <input type="hidden" id="hidDateFrom" value="@ViewBag.DateFrom" />
+        <input type="hidden" id="hidDateTo" value="@ViewBag.DateTo" />
+    </div>
+    <div id="user-role-dialog">
+        <label for="selUserRole">用户所具有的角色：</label>
+        <select id="selUserRole" multiple data-placeholder="未分配角色..." style="width:240px;min-height:55px;"> </select>
+    </div>
+    <script type="text/x-kendo-template" id="top-tool-bar">
+        <label for="txtDateFrom" class="category-label" style="margin-left:5px">创建日期：</label>
+        <input id="txtDateFrom" style="width: 120px" />
+        <label for="txtDateTo" class="category-label" style="margin-left:5px">-</label>
+        <input id="txtDateTo" style="width: 120px" />
+        <label for="selDepartments" class="category-label" style="margin-left:5px">部门：</label>
+        <input id="selDepartments" style="width: 160px" />
+        <button id="btnQuery" class="k-button k-primary" style="margin-left:20px" onclick="user.query()">检索</button>
+        <button id="btnAddNew" class="k-button" style="margin-left:5px" onclick="user.add()"><span class="k-icon k-add" style="margin-right:5px;margin-bottom:2px;"></span>新增用户</button>
+    </script>
+    <script type="text/x-kendo-template" id="user-edit">
+        <div class="pf-editor-big">
+            <div class="k-edit-label"><label for="USER_CODE">账号</label> </div>
+            <div data-container-for="USER_CODE" class="k-edit-field">
+                <input type="text"
+                       class="k-input k-textbox"
+                       name="USER_CODE"
+                       required="required"
+                       data-required-msg="用户账号是必填项"
+                       maxlength="16"
+                       data-bind="value:USER_CODE">
+                <span style="vertical-align: middle;color: red;padding-left: 5px;">*</span>
+            </div>
+            <div class="k-edit-label"><label for="USER_NAME">姓名</label> </div>
+            <div data-container-for="USER_NAME" class="k-edit-field">
+                <input type="text"
+                       class="k-input k-textbox"
+                       name="USER_NAME"
+                       required="required"
+                       data-required-msg="用户姓名是必填项"
+                       maxlength="32"
+                       data-bind="value:USER_NAME">
+                <span style="vertical-align: middle;color: red;padding-left: 5px;">*</span>
+            </div>
+            <div class="k-edit-label"><label for="SEX">性别</label> </div>
+            <div class="k-edit-field">
+                <input name="SEX"
+                       data-bind="value:SEX"
+                       data-value-field="value"
+                       data-text-field="text"
+                       data-type="number"
+                       data-source=sexes
+                       data-role="dropdownlist"
+                       validationMessage="性别是必选项"
+                       required />
+                <span style="vertical-align: middle;color: red;padding-left: 5px;">*</span>
+            </div>
+            <div class="k-edit-label"><label for="TELEPHONE">电话号码</label></div>
+            <div data-container-for="TELEPHONE" class="k-edit-field">
+                <input type="text"
+                       class="k-input k-textbox"
+                       name="TELEPHONE"
+                       required="required"
+                       data-required-msg="手机号码是必填项"
+                       maxlength="16"
+                       data-bind="value:TELEPHONE">
+                <span style="vertical-align: middle;color: red;padding-left: 5px;">*</span>
+            </div>
+            <div class="k-edit-label"><label for="EMAIL">电子邮箱</label> </div>
+            <div data-container-for="EMAIL" class="k-edit-field">
+                <input type="text"
+                       class="k-input k-textbox"
+                       name="EMAIL"
+                       required="required"
+                       data-required-msg="电子邮箱是必填项"
+                       maxlength="64"
+                       data-bind="value:EMAIL">
+                <span style="vertical-align: middle;color: red;padding-left: 5px;">*</span>
+            </div>
+            <div class="k-edit-label"><label for="DEPARTMENT_ID">所属部门</label> </div>
+            <div class="k-edit-field">
+                <input name="DEPARTMENT_ID"
+                       data-bind="value:DEPARTMENT_ID"
+                       data-value-field="value"
+                       data-text-field="text"
+                       data-type="number"
+                       data-source=departments
+                       data-role="dropdownlist"
+                       validationMessage="所属部门是必选项"
+                       required />
+                <span style="vertical-align: middle;color: red;padding-left: 5px;">*</span>
+            </div>
+            <div class="k-edit-label"><label for="USER_STATUS">用户状态</label> </div>
+            <div class="k-edit-field">
+                <input name="USER_STATUS"
+                       data-bind="value:USER_STATUS"
+                       data-value-field="value"
+                       data-text-field="text"
+                       data-type="number"
+                       data-source=userStatus
+                       data-role="dropdownlist"
+                       validationMessage="用户状态是必选项"
+                       required />
+                <span style="vertical-align: middle;color: red;padding-left: 5px;">*</span>
+            </div>
+        </div>
+    </script>
+    <div id="user-list" class="pf-full-screen-panel pf-full-screen-panel-padding" style="height:auto;">
+    </div>
+</div>
+
+<script type="text/javascript">
+    var $userList = null;
+    var $selUserRole = null;
+    var $userRoleDialog = null;
+    var $usersContainer = $("#users");
+    var currentUserId = null;
+    var sexes = JSON.parse($usersContainer.find("#hidSexes").val());
+    var userStatus = JSON.parse($usersContainer.find("#hidUserStatus").val());
+    var departments = JSON.parse($usersContainer.find("#hidDepartments").val());
+    departments.unshift({ text: "请选择", value: 0 });
+
+    var user = {
+        query: function (e) {
+            usersDataSource.read();
+        },
+        add: function (e) {
+            $usersContainer.find("#user-list .k-grid-toolbar>.k-grid-add").trigger("click");
+        },
+        resetPassword: function (userData) {
+            //alert("重置密码~");
+            $.post("User/ResetPassword", { userDto: kendo.stringify(userData) }, function (response) {
+                if (response && response.ResultType === 1)
+                    $notification.showSuccess(response.Message);
+                else
+                    $notification.showError(response.Message);
+            });
+        },
+        authorize: function (userId) {
+            //alert("权限授予~");
+            $.get("User/GetUserRoles", { userId: userId }, function (response) {
+                if (response.ResultType === 1) {
+                    currentUserId = userId;
+                    $selUserRole.value(response.Data);
+                    $userRoleDialog.open();
+                }
+            });
+        }
+    };
+    var usersDataSource = new kendo.data.DataSource({
+        batch: false,
+        pageSize: 20,
+        dataType: "json",
+        serverPaging: true,
+        serverSorting: false,
+        transport: {
+            read: { type: "get", url: "@Url.Action("GetUsers", "User")" },
+            create: { type: "post", url: "@Url.Action("AddUser", "User")" },
+            update: { type: "post", url: "@Url.Action("UpdateUser", "User")" },
+            destroy: { type: "post", url: "@Url.Action("DeleteUser", "User")" },
+            parameterMap: function (options, operation) {
+                var parameter;
+                if (operation === "create" || operation === "update" || operation === "destroy") {
+                    parameter = { userDto: kendo.stringify(options) };
+                } else {
+                    parameter = {
+                        dateFrom: $usersContainer.find("#txtDateFrom").val() || $usersContainer.find('#hidDateFrom').val(),
+                        dateTo: $usersContainer.find("#txtDateTo").val() || $usersContainer.find('#hidDateTo').val(),
+                        departmentId: $usersContainer.find("#selDepartments").val() || 0,
+                        pageSize: options.pageSize,
+                        pageIndex: options.page,
+                        sortDir: 'asc',
+                        sortField: 'ID'
+                    };
+                }
+                return parameter;
+            },
+        },
+        requestEnd: function (e) {
+            if (e.type === "create" || e.type === "update" || e.type === "destroy") {
+                usersDataSource.read();
+                if (e.response.ResultType != 1) {
+                    $notification.showError(e.response.Message);
+                } else {
+                    $notification.showSuccess(e.response.Message);
+                }
+            }
+            return true;
+        },
+        schema: {
+            data: function (d) { return d.Items; },
+            total: function (d) { return d.TotalCount; },
+            model: {
+                id: "ID",
+                fields: {
+                    ID: { type: "number", nullable: true },
+                    USER_CODE: { editable: true, validation: { required: { message: "用户账号是必填项" }, maxLength: 16 } },
+                    USER_NAME: { editable: true, validation: { required: { message: "用户姓名是必填项" }, maxLength: 32 } },
+                    SEX: { editable: true, type: "number", nullable: false, validation: { required: { message: "部门是必选项" } } },
+                    DEPARTMENT_ID: { editable: true, type: "number", nullable: false, validation: { required: { message: "用户性别是必选项" } } },
+                    USER_STATUS: { editable: true, type: "number", nullable: false, validation: { required: { message: "用户状态是必选项" } } },
+                    TELEPHONE: { editable: true, validation: { required: { message: "手机号码是必填项" }, maxLength: 16 } },
+                    EMAIL: { editable: true, validation: { required: { message: "电子邮箱是必填项" }, maxLength: 64 } },
+
+                    LAST_LOGIN_TIME: { editable: false, nullable: true },
+                    OPERATOR_ID: { type: "number", editable: false, nullable: true },
+                    CREATE_TIME: { editable: false, nullable: true },
+                    UPDATE_TIME: { editable: false, nullable: true }
+                }
+            }
+        }
+    });
+    $(document).ready(function () {//user-role-dialog
+        $.get("Role/GetAllRoles", {}, function (response) {
+            if (response && response.ResultType === 1) {
+                //response.Data.push({ RoleId: 1, RoleName: "管理员" });
+                $selUserRole = $("#selUserRole").kendoMultiSelect({
+                    placeholder: "未分配角色...",
+                    dataTextField: "RoleName",
+                    dataValueField: "RoleId",
+                    autoBind: false,
+                    dataSource: response.Data,
+                    value: []
+                }).data("kendoMultiSelect");
+            }
+        });
+        $userRoleDialog = $usersContainer.find("#user-role-dialog").kendoGDialog({
+            title: "用户角色", visible: false, modal: true, minWidth: 250, maxHeight: 500, minHeight: 312,
+            position: { top: 76, left: 860 },
+            onOk: function () {
+                if ($selUserRole && currentUserId) {
+                    $.post("User/UpdateUserRole", { userId: currentUserId, roleIds: $selUserRole.value().join('|') }, function (response) {
+                        if (response && response.ResultType === 1) {
+                            $selUserRole.value([]);
+                            $notification.showSuccess(response.Message);
+                            if ($userRoleDialog) { $userRoleDialog.close(); }
+                        } else {
+                            $notification.showError(response.Message);
+                        }
+                    });
+                }
+            },
+            close: function () {
+                currentUserId = null;
+                $selUserRole.value([]);//清空选中项
+            }
+        }).data('kendoGDialog');
+        $userList = $usersContainer.find("#user-list").kendoGrid({
+            dataSource: usersDataSource,
+            sortable: false,
+            resizable: true,
+            selectable: "row",
+            columnMenu: true,
+            editable: {
+                mode: "popup",
+                confirmation: "确定要删除此用户？",
+                window: { title: "用户", open: function (e) { } },
+                template: kendo.template($usersContainer.find("#user-edit").html())
+            },
+            pageable: { refresh: true, pageSizes: true, buttonCount: 5 },
+            toolbar: [{ title: "用户管理", template: kendo.template($usersContainer.find("#top-tool-bar").html()) },
+                      { name: "create", mode: "popup", window: { title: "添加新用户~" } }],
+            columns: [
+                { field: "ID", title: "ID", hidden: true },
+                { field: "USER_CODE", title: "账号" },
+                { field: "USER_NAME", title: "姓名" },
+                { field: "SEX", title: "性别", values: sexes },
+                { field: "TELEPHONE", title: "电话号码" },
+                { field: "EMAIL", title: "电子邮箱" },
+                { field: "DEPARTMENT_ID", title: "所属部门", values: departments },
+                { field: "USER_STATUS", title: "用户状态", values: userStatus },
+                { field: "LAST_LOGIN_TIME", title: "最后登录时间", width: 180 },
+                { field: "OPERATOR_ID", title: "最后操作人ID", hidden: true },
+                { field: "CREATE_TIME", title: "创建时间", hidden: true },
+                { field: "UPDATE_TIME", title: "更新时间", hidden: true },
+                {
+                    title: "操作",
+                    width: "288px",
+                    command: [
+                        { name: "edit", text: "编辑" },
+                        { name: "destroy", text: "删除" },
+                        {
+                            imageClass: "k-icon e-icon-cloud",
+                            name: "authority", text: "授权", click: function (e) {
+                                var tr = $(e.target).closest("tr");
+                                var userData = this.dataItem(tr);
+                                if (userData && userData.ID > 0) { user.authorize(userData.ID); }
+                                return false;
+                            }
+                        },
+                        {
+                            name: "resetPassword", text: "重置密码", click: function (e) {
+                                var tr = $(e.target).closest("tr");
+                                var userData = this.dataItem(tr);
+                                if (userData && userData.ID > 0) { user.resetPassword(userData); }
+                                return false;
+                            }
+                        }
+                    ]
+                }
+            ]
+        }).data("kendoGrid");
+
+        //隐藏输煤详细添加按键，其click事件交由顶部工具栏按键触发
+        $usersContainer.find("#user-list .k-grid-toolbar>.k-grid-add").hide();
+        $usersContainer.find('#selDepartments').kendoDropDownList({
+            //index: 0,
+            dataSource: departments,
+            dataTextField: "text",
+            dataValueField: "value"
+        });
+        $usersContainer.find('#txtDateFrom').kendoDatePicker({
+            format: "yyyy-MM-dd",
+            value: $usersContainer.find('#hidDateFrom').val()
+        });
+        $usersContainer.find('#txtDateTo').kendoDatePicker({
+            format: "yyyy-MM-dd",
+            value: $usersContainer.find('#hidDateTo').val()
+        });
+
+    });
+</script>

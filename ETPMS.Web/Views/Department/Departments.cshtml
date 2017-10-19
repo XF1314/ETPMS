@@ -1,0 +1,60 @@
+﻿
+
+<div id="departments">
+    <div id="department-tree" class="pf-full-screen-panel pf-full-screen-panel-padding pf-noborder-panel">
+        <div id="left-pane">
+            <div class="pane-content" style="height:100%;">
+                <div id="department-treeView" class="pf-user-dpt-treeview-pane"></div>
+            </div>
+        </div>
+        <div id="right-pane">
+            <div class="pane-content">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var $departmentSplitter = null;
+        var $departmentTreeView = null;
+        var $departmentsContainer = $("#departments");
+        var departmentDataSource = new kendo.data.HierarchicalDataSource({
+            transport: {
+                read: {
+                    type: "get",
+                    dataType: "json",
+                    url: "@Url.Action("GetChildDepartmentNode", "Department")"
+                }
+            },
+            schema: { model: { id: "id", hasChildren: "hasItem" } }
+        });
+
+        $(document).ready(function () {
+            $departmentSplitter = $departmentsContainer.find("#department-tree").kendoSplitter({
+                panes: [
+                    { collapsible: false, size: "20%" },
+                    { collapsible: false }
+                ]
+            }).data("kendoSplitter");
+            $departmentTreeView = $departmentsContainer.find("#department-treeView").kendoTreeView({
+                dataValueField: "id",
+                dataSource: departmentDataSource,
+                select: function (e) {
+                    var parentDepartmentName = "";
+                    var departmentId = this.dataItem(e.node).id;
+                    var parentDepartmentNode = $(e.node).parent()
+                    try {
+                        parentDepartmentName = this.dataItem(parentDepartmentNode).text;
+                    } catch (e) {
+                        parentDepartmentName = "华北电力研究院";
+                    }
+                    //点击节点后,载入编辑页面
+                    $departmentSplitter.ajaxRequest(".k-pane:last",
+                        "@Url.Action("DepartmentEdit","Department")",
+                        { departmentId: departmentId, parentDepartmentName: parentDepartmentName });
+                }
+            }).data("kendoTreeView");
+
+
+        });
+
+    </script>
+</div>

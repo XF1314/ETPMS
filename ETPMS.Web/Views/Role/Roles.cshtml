@@ -1,0 +1,277 @@
+﻿
+<div id="roles">
+    <style type="text/css">
+        #roles .e-icon-cloud {
+            background-image: url('../../Content/icons/menu/cloud.png');
+            background-repeat: no-repeat;
+        }
+
+        #roles .e-icon-file {
+            background-image: url('../../Content/icons/menu/file.png');
+            background-repeat: no-repeat;
+        }
+
+        .k-checkbox:indeterminate + .k-checkbox-label:after {
+            margin-top: 7px;
+        }
+
+        .k-checkbox-label {
+            margin-top: -8px;
+        }
+    </style>
+
+    <div id="tempData">
+        <input type="hidden" id="hidDateFrom" value="@ViewBag.DateFrom" />
+        <input type="hidden" id="hidDateTo" value="@ViewBag.DateTo" />
+    </div>
+    <div id="role-list" class="pf-full-screen-panel pf-full-screen-panel-padding" style="height:auto;"></div>
+    <div id="role-authority"> <div id="authority-tree" class="pf-user-dpt-treeview-pane"></div></div>
+    <script type="text/x-kendo-template" id="top-tool-bar">
+        <label for="txtDateFrom" class="category-label" style="margin-left:5px">创建日期：</label>
+        <input id="txtDateFrom" style="width: 120px" />
+        <label for="txtDateTo" class="category-label" style="margin-left:5px">-</label>
+        <input id="txtDateTo" style="width: 120px" />
+        <button id="btnQuery" class="k-button k-primary" style="margin-left:20px" onclick="role.query()">检索</button>
+        <button id="btnAddNew" class="k-button" style="margin-left:5px;" onclick="role.add()"><span class="k-icon k-add" style="margin-right:5px;margin-bottom:2px;"></span>新增角色</button>
+    </script>
+    <script type="text/x-kendo-template" id="role-edit">
+        <div class="pf-editor-big">
+            <div class="k-edit-label"><label for="USER_CODE">角色编码</label> </div>
+            <div data-container-for="ROLE_CODE" class="k-edit-field">
+                <input type="text"
+                       class="k-input k-textbox"
+                       name="ROLE_CODE"
+                       required="required"
+                       data-required-msg="角色编码是必填项"
+                       maxlength="16"
+                       data-bind="value:ROLE_CODE">
+                <span style="vertical-align: middle;color: red;padding-left: 5px;">*</span>
+            </div>
+            <div class="k-edit-label"><label for="ROLE_NAME">角色名称</label> </div>
+            <div data-container-for="ROLE_NAME" class="k-edit-field">
+                <input type="text"
+                       class="k-input k-textbox"
+                       name="ROLE_NAME"
+                       required="required"
+                       data-required-msg="角色名称是必填项"
+                       maxlength="32"
+                       data-bind="value:ROLE_NAME">
+                <span style="vertical-align: middle;color: red;padding-left: 5px;">*</span>
+            </div>
+            <div class="k-edit-label"><label for="ROLE_INDEX">排序索引</label> </div>
+            <div class="k-edit-field">
+                <input type="text"
+                       name="ROLE_INDEX"
+                       data-type="number"
+                       data-role="numerictextbox"
+                       data-bind="value:ROLE_INDEX" />
+            </div>
+            <div class="k-edit-label">
+                <label for="ROLE_DESCRIPTION">角色描述</label>
+            </div>
+            <div class="k-edit-field">
+                <textarea name="Remark"
+                          data-bind="value:ROLE_DESCRIPTION"
+                          class="k-textbox k-input"
+                          style="width:92%;height:80px;" />
+            </div>
+        </div>
+    </script>
+    <script type="text/javascript">
+        var $roleList;
+        var $menuTreeView;
+        var $roleAuthorityDialog;
+        var $rolesContainer = $("#roles");
+        var currentRoleId;
+        var role = {
+            add: function (e) {
+                //$notification.showInfo("新增角色~");
+                $rolesContainer.find("#role-list .k-grid-toolbar>.k-grid-add").trigger("click");
+            },
+            query: function (e) {
+                // $notification.showInfo("查询角色~");
+                rolesDataSource.read();
+            },
+            authorize: function (roleId) {
+                //$notification.showInfo("角色授权~");
+                currentRoleId = roleId;
+                $menuTreeView = $("#authority-tree").kendoTreeView({
+                    check: function () { },
+                    dataSource: new kendo.data.HierarchicalDataSource({
+                        transport: {
+                            read: {
+                                dataType: "json",
+                                url: "@Url.Action("GetMenuTree", "Role")", type: "get",
+                                data: function (data) { return { roleId: roleId } }
+                            }
+                        },
+                        schema: {
+                            model: {
+                                checked: "checked",
+                                expanded: "expanded",
+                                spriteCssClass: "spriteCssClass",
+                                hasChildren: "hasItem",
+                                children: "items"
+                            }
+                        }
+                    }),
+                    dataValueField: "id",
+                    dataTextField: "text",
+                    checkboxes: { checkChildren: true },
+                    select: function (e) { }
+                }).data('kendoTreeView');
+
+                $menuTreeView.root = [],//kendo treeview 的bug,必须要如此设置
+                $roleAuthorityDialog.open();
+            }
+        };
+        var rolesDataSource = new kendo.data.DataSource({
+            batch: false,
+            pageSize: 20,
+            dataType: "json",
+            serverPaging: true,
+            serverSorting: false,
+            transport: {
+                read: { type: "get", url: "@Url.Action("GetRoles", "Role")" },
+                create: { type: "post", url: "@Url.Action("AddRole", "Role")" },
+                update: { type: "post", url: "@Url.Action("UpdateRole", "Role")" },
+                destroy: { type: "post", url: "@Url.Action("DeleteRole", "Role")" },
+                parameterMap: function (options, operation) {
+                    var parameter;
+                    if (operation === "create" || operation === "update" || operation === "destroy") {
+                        parameter = { roleDto: kendo.stringify(options) };
+                    } else {
+                        parameter = {
+                            dateFrom: $rolesContainer.find("#txtDateFrom").val() || $rolesContainer.find('#hidDateFrom').val(),
+                            dateTo: $rolesContainer.find("#txtDateTo").val() || $rolesContainer.find('#hidDateTo').val(),
+                            pageSize: options.pageSize,
+                            pageIndex: options.page,
+                            sortDir: 'asc',
+                            sortField: 'ID'
+                        };
+                    }
+                    return parameter;
+                },
+            },
+            requestEnd: function (e) {
+                if (e.type === "create" || e.type === "update" || e.type === "destroy") {
+                    this.read();
+                    if (e.response.ResultType != 1) {
+                        $notification.showError(e.response.Message);
+                    } else {
+                        $notification.showSuccess(e.response.Message);
+                    }
+                }
+                return true;
+            },
+            schema: {
+                data: function (d) { return d.Items; },
+                total: function (d) { return d.TotalCount; },
+                model: {
+                    id: "ID",
+                    fields: {
+                        ID: { type: "number", nullable: true },
+                        ROLE_CODE: { editable: true, validation: { required: { message: "角色编码是必填项" }, maxLength: 16 } },
+                        ROLE_NAME: { editable: true, validation: { required: { message: "角色名称是必填项" }, maxLength: 32 } },
+                        ROLE_INDEX: { editable: true, type: "number", nullable: false },
+                        ROLE_DESCRIPTION: { editable: true, nullable: false, validation: { maxLength: 256 } },
+
+                        OPERATOR_ID: { type: "number", editable: false, nullable: true },
+                        CREATE_TIME: { editable: false, nullable: true },
+                        UPDATE_TIME: { editable: false, nullable: true }
+                    }
+                }
+            }
+        });
+        $(document).ready(function () {
+            $roleList = $rolesContainer.find("#role-list").kendoGrid({
+                dataSource: rolesDataSource,
+                sortable: false,
+                resizable: true,
+                selectable: "row",
+                columnMenu: true,
+                editable: {
+                    mode: "popup",
+                    confirmation: "确定要删除此角色？",
+                    window: { title: "角色", open: function (e) { } },
+                    template: kendo.template($rolesContainer.find("#role-edit").html())
+                },
+                pageable: { refresh: true, pageSizes: true, buttonCount: 5 },
+                toolbar: [{ title: "角色管理", template: kendo.template($rolesContainer.find("#top-tool-bar").html()) },
+                          { name: "create", mode: "popup", window: { title: "添加新角色~" } }],
+                columns: [
+                    { field: "ID", title: "ID", hidden: true },
+                    { field: "ROLE_CODE", title: "角色编码" },
+                    { field: "ROLE_NAME", title: "角色名称" },
+                    { field: "ROLE_INDEX", title: "排序索引" },
+                    { field: "ROLE_DESCRIPTION", title: "角色描述", width: 320 },
+                    { field: "OPERATOR_ID", title: "最后操作人ID", hidden: true },
+                    { field: "CREATE_TIME", title: "创建时间" },
+                    { field: "UPDATE_TIME", title: "更新时间" },
+                    {
+                        title: "操作",
+                        width: "228px",
+                        command: [
+                            { name: "edit", text: "编辑" },
+                            { name: "destroy", text: "删除" },
+                            {
+                                imageClass: "k-icon e-icon-cloud",
+                                name: "authority", text: "授权", click: function (e) {
+                                    var tr = $(e.target).closest("tr");
+                                    var roleData = this.dataItem(tr);
+                                    if (roleData && roleData.ID > 0) { role.authorize(roleData.ID); }
+                                    return false;
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }).data("kendoGrid");
+            $roleAuthorityDialog = $rolesContainer.find("#role-authority").kendoGDialog({
+                title: "角色权限分配", visible: false, modal: true, minWidth: 250, maxHeight: 360, height: 360,
+                position: { top: 76, left: 860 },
+                onOk: function () {
+                    if ($menuTreeView) {
+                        var checkedMenuIds = [];
+                        var nodes = $menuTreeView.dataSource.view();
+                        getCheckedMenuIds(nodes, checkedMenuIds);
+                        if (checkedMenuIds.length && currentRoleId) {
+                            $.post("/Role/UpdateRoleMenu", { roleId: currentRoleId, menuIds: checkedMenuIds.join("|") }, function (response) {
+                                if (response && response.ResultType === 1) {
+                                    $notification.showSuccess(response.Message);
+                                    if ($roleAuthorityDialog) { $roleAuthorityDialog.close(); }
+                                } else {
+                                    $notification.showError(response.Message);
+                                }
+                            });
+                        }
+                    }
+                },
+                close: function () { $menuTreeView.destroy(); currentRoleId = null; }
+            }).data('kendoGDialog');
+
+            //隐藏输煤详细添加按键，其click事件交由顶部工具栏按键触发
+            $rolesContainer.find("#role-list .k-grid-toolbar>.k-grid-add").hide();
+            $rolesContainer.find('#txtDateFrom').kendoDatePicker({
+                format: "yyyy-MM-dd",
+                value: $rolesContainer.find('#hidDateFrom').val()
+            });
+            $rolesContainer.find('#txtDateTo').kendoDatePicker({
+                format: "yyyy-MM-dd",
+                value: $rolesContainer.find('#hidDateTo').val()
+            });
+        });
+
+        //递归获取选中的菜单节点id
+        function getCheckedMenuIds(nodes, checkedIds) {
+            for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i].checked) {
+                    checkedIds.push(nodes[i].id);
+                }
+                if (nodes[i].hasChildren) {
+                    getCheckedMenuIds(nodes[i].children.view(), checkedIds);
+                }
+            }
+        }
+    </script>
+</div>
